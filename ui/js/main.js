@@ -12,7 +12,7 @@ console.log("started");
             // DEV
             var reposinfo2 = {
               method: 'GET',
-             url: "./output/det.json",
+             url: "./output/dev.json",
               headers: {"Content-Type": "application/json"}
            }
           $http(reposinfo2).then(function(response2){
@@ -28,7 +28,7 @@ console.log("started");
      // STAGE
             var reposinfo1 = {
               method: 'GET',
-            url: "./output/det.json",
+            url: "./output/dev.json",
               headers: {"Content-Type": "application/json"}
           }
           $http(reposinfo1).then(function(response){
@@ -47,7 +47,7 @@ console.log("started");
     // INT
                   var aws_au_1012 = {
                     method: 'GET',
-                  url: "./output/det.json",
+                  url: "./output/dev.json",
                     headers: {"Content-Type": "application/json"}
                 }
                 $http(aws_au_1012).then(function(response){
