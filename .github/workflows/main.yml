@@ -30,8 +30,19 @@ jobs:
       - name: GET all AWS US 1012
         id: tms1
         run: | 
-          curl --user apigw:XCZZpHNh4eJTTs4f --location --request GET 'https://tms.apigw-aw-us.webmethods-dev.io/tms/v1/tenants' --header 'Accept: application/json' -o AWS.json
-          
+          curl --user apigw:XCZZpHNh4eJTTs4f --location --request GET 'https://tms.apigw-aw-us.webmethods-dev.io/tms/v1/tenants' --header 'Accept: application/json' -o ./output/dev.json
+            
+       
+             
+      - name: "Put back details for dev"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          GITHUB_TOKEN: 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
+          branch: main
+          commit_message: "Automated Change"
+          push_options: '--force'
+          create_branch: true  
+      
       - name: Upload performance test results
         uses: actions/upload-artifact@v3
         with:
