@@ -185,9 +185,7 @@ console.log("started");
             }
             document.getElementById(tabName).style.display = "block";
 
-            if(tabName === "Schedules"){
-              document.getElementById('defaultOpen2').click();
-            }
+           
           }
           //// Get the element with id="defaultOpen" and click on it
           //  document.getElementById("defaultOpen").Click();
