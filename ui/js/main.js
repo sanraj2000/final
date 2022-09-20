@@ -47,7 +47,7 @@ console.log("started");
     // INT
                   var aws_au_1012 = {
                     method: 'GET',
-                  url: "./output/dev.json",
+                  url: "./output/int.json",
                     headers: {"Content-Type": "application/json"}
                 }
                 $http(aws_au_1012).then(function(response){
