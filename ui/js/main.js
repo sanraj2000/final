@@ -184,7 +184,7 @@ console.log("started");
               x[i].style.display = "none";
             }
             document.getElementById(tabName).style.display = "block";
-             if(tabName === "Testjobs"){
+             if(tabName === "TESTJOBS"){
               document.getElementById('defaultOpen2').click();
             }
            
