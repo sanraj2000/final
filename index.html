@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TENANT DETAILS</title>
+    <title>COPS</title>
     <!-- bootstrap 4 css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="./detailsShow/img/fav_sag_cloud.png">
     <!-- google font -->
     <!-- custom css -->
-    <link rel="stylesheet" href="./ui/css/main.css">
+    <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <!-- custom js -->
-    <script src="./ui/js/main.js"></script>
+    <script src="main.js"></script>
 
 
     <script>
@@ -26,12 +26,14 @@
 
 <body ng-app="cetApp" ng-controller="cetCtrl"  onload="document.getElementById('defaultOpen').click();">
     
-  
+    <div class="w3-bar main-header container-fluid" >
+        <img src="./detailsShow/img/sag_wmio_cloud3.png" alt="wmio cle"  height="50">
+    </div>
 
 
     <div class="container-fluid  headerBlock col bg-info text-white">
-        <h1 class="display-5">APIGW CLOUD</h1>
-        <p class="lead"> List of Test Tenant details</p>
+        <h1 class="display-5">COPS API</h1>
+        <p class="lead"> List of webMethods.io API Tenant details, from 10.11 onwards platfroms...</p>
     </div>
 
 
@@ -39,51 +41,114 @@
     
     <div class="tab" style="margin-left: 94px; margin-right: 94px; margin-top: 20px;">
        
-        <button class="tablinks" onclick="connectorTabs('DEVTENANTS')"  id="defaultOpen" style="background: darkseagreen;">DEV</button>
-        <button class="tablinks" onclick="connectorTabs('STAGETENANTS') " style="background: darkseagreen;">STAGE</button>        
-        <button class="tablinks" onclick="connectorTabs('INTTENANTS')" style="background: darkseagreen;">INT</button>
-        <button class="tablinks" onclick="connectorTabs('Testjobs')" style="background: darkturquoise;">TEST JOBS</button>
-       
+        <button class="tablinks" onclick="connectorTabs('AWSPRODUS')"  id="defaultOpen" style="background: darkseagreen;">AWS US</button>
+        <button class="tablinks" onclick="connectorTabs('AWSPRODEU') " style="background: darkseagreen;">AWS EU</button>        
+        <button class="tablinks" onclick="connectorTabs('AWSPRODAU')" style="background: darkseagreen;">AWS AU</button>
+        <button class="tablinks" onclick="connectorTabs('AzurePRODUS')" style="background: darkturquoise;">Azure US</button>        
+        <button class="tablinks" onclick="connectorTabs('AzurePRODEU')" style="background: darkturquoise;">Azure EU</button>
+        <button class="tablinks" onclick="connectorTabs('AzurePRODAU')" style="background: darkturquoise;" >Azure AU</button>
+        <button class="tablinks" onclick="connectorTabs('Schedules')" >Schedules</button>
 
       </div>
     
  
 
-<!-- DEV TENANTS          -->
+<!-- AWS US           -->
 
-<div id="DEVTENANTS" class="container-fluid wmiotabtype tabcontent">
+<div id="AWSPRODUS" class="container-fluid wmiotabtype tabcontent">
     <div class="container-fluid row">        
 
-            <p class="lead"> # DEV TENANTS : {{ totalCount_cc2 }}</p>
+            <p class="lead"> AWS US  : {{ totalCount_cc2 }}</p>
 
     </div>
  
     <br />
 
    <!-- new sear4ch-->
-     <div class="row">
-            <div class="col-md-4">
-                Search By:
-                <select class="form-control" ng-model='SearchTerm'>
-                    <option value='$'>Any</option>
-                    <option value='tenantName'>Name</option>
-                    <option value='tier'>Type</option>
-                    <option value='currentVersion'>Version</option>
-                    <option value='tenantStatus'>Status</option>
-                </select>
-            </div>
-            <div class="col-md-8">
-                Search Key:
-                <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
-            </div>
-        </div>
-        <br />
+ <div class="row   " style="padding: 10px; background-color: #F2F2EA ; "> 
 
- 
+    <div class="row" style="width: 100%;">
+        <div class="col-md-2">
+            Search By:
+            <select class="form-control" ng-model='SearchTerm'>
+                <option value='$'>Any</option>
+                <option value='tenantName'>Name</option>
+                <option value='tier'>Type</option>
+                <option value='currentVersion'>Version</option>
+                <option value='tenantStatus'>Status</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            Search Key:
+            <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
+        </div>
+
+        <div class="col-md-3">
+            Search By Type:
+            <select class="form-control" ng-model="searchKeyword['tier']">
+                <option value=""> All </option>
+                     <option value="TRIAL">TRIAL</option>
+                     <option value="PAID_BASIC">PAID_BASIC</option>
+                     <option value="PAID_ENTERPRISE">PAID_ENTERPRISE</option>
+                     <option value="PAID_ADVANCED">PAID_ADVANCED</option>
+                     <option value="PAID_OTHERS">PAID_OTHERS</option>
+                     
+        </select>    
+
+        </div>
+
+        <div class="col-md-2">
+            Search By Status:
+            <select class="form-control" ng-model="searchKeyword['tenantStatus']">
+                <option value=""> All </option>
+                <option value="STOPPED">STOPPED</option>
+                <option value="DEPLOYED">DEPLOYED</option>
+                <option value="DELETE_FAILED">DELETE_FAILED</option>
+                <option value="DEPLOYED">DEPLOYED</option>
+                <option value="FIX_UPGRADE_FAILED">FIX_UPGRADE_FAILED</option>
+                <option value="FIX_UPGRADE_SCHEDULED">FIX_UPGRADE_SCHEDULED</option>
+                     
+        </select>    
+
+        </div>
+
+        <div class="col-md-1">
+         Page Count : 
+        <select ng-model="pageSize1" id="pageSize1" class="form-control" style="width: 80px;">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="20">30</option>
+            <option value="50">50</option>
+         </select>
+        </div>
+    </div>
+
+</div>
 <!-- new search end-->
                 
 
-   
+    <div class="row myreposBlock" style="padding: 10px; background-color: #F2F2EA ; " >
+        <div class="col" style="float: right; text-align: center;">
+
+            <button ng-disabled="currentPage1 == 0" ng-click="currentPage1=currentPage1-1">
+                Previous
+            </button>
+            {{currentPage1+1}}/{{numberOfPages1()}}
+            <button ng-disabled="currentPage1 >= getData1().length/pageSize1 - 1" ng-click="currentPage1=currentPage1+1">
+                Next
+            </button>
+         </div>
+         
+    <div class="row  "  >
+        <div class="col" style="float: right; text-align: center;">
+            <label>Count : {{ allrows_cconns2.length }}</label>  
+           
+         </div>
+    </div>
+    </div>
+
 
     <table class="table table-striped table-hover table-bordered">
         <tr>
@@ -91,7 +156,6 @@
             <th style="width: 200px;">Tenant Name</th>
             <th style="width: 200px;">Type</th>
             <th style="width: 200px;">Status</th>
-            <th style="width: 200px;">Email</th>
             <th style="width: 200px;">Version</th>
             <th style="width: 200px;">Created</th>
             <th style="width: 200px;">Updated</th>
@@ -101,18 +165,17 @@
           <td>{{ connD2.tenantName }}</td>
           <td>{{ connD2.tier }}</td>
           <td>{{ connD2.tenantStatus }}</td>
-          <td>{{ connD2.tenantEmail }}</td> 
           <td> {{ formatVersion(connD2.currentVersion) }} </td>
           <td> {{ formatDate(connD2.creationDate) }}   </td>
           <td> {{ formatDate(connD2.latestChangeDate) }}  </td>
         </tr>
       </table>
 </div>
-<!-- STAGE TENANTS          -->
+<!-- AWS EU           -->
       
-      <div id="STAGETENANTS" class="container-fluid wmiotabtype tabcontent">
+      <div id="AWSPRODEU" class="container-fluid wmiotabtype tabcontent">
         <div class="container-fluid row">
-            <p class="lead"> # STAGE TENANTS  : {{ totalCount_cc }}</p>
+            <p class="lead"> AWS EU  : {{ totalCount_cc }}</p>
         </div>
 
         <div class="row">
@@ -150,8 +213,8 @@
               <td>{{ connD.tier }}</td>
               <td>{{ connD.tenantStatus }}</td>
               <td>{{ formatVersion(connD.currentVersion) }}</td>
-              <td>{{ formatDate(connD.creationDate) }}</td>
-              <td>{{ formatDate(connD.latestChangeDate) }}</td>
+              <td>{{ connD.creationDate }}</td>
+              <td>{{ connD.latestChangeDate }}</td>
             </tr>
           </table>
      </div>
@@ -159,11 +222,11 @@
 
 
 
-    <!-- INT TENANTS          -->
-    <div id="INTTENANTS" class="container-fluid wmiotabtype tabcontent">
+    <!-- AWS AU           -->
+    <div id="AWSPRODAU" class="container-fluid wmiotabtype tabcontent">
         
         <div class="container-fluid row">
-            <p class="lead"># INT TENANTS  : {{ totalCount_cc3 }}</p>
+            <p class="lead"> AWS AU  : {{ totalCount_cc3 }}</p>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -200,15 +263,169 @@
               <td>{{ connD2.tier }}</td>
               <td>{{ connD2.tenantStatus }}</td>
               <td>{{ formatVersion(connD2.currentVersion) }}</td>
-              <td>{{ formatDate(connD2.creationDate) }}</td>
-              <td>{{ formatDate(connD2.latestChangeDate) }}</td>
+              <td>{{ connD2.creationDate }}</td>
+              <td>{{ connD2.latestChangeDate }}</td>
             </tr>
           </table>
   </div>
  
-    <!--- TEST JOBS ---->
+  <!--  #########################################   Start of Azure ########################### -->
+
+  <!-- Azure US           -->
+
+<div id="AzurePRODUS" class="container-fluid wmiotabtype tabcontent">
+    <div class="container-fluid row">
+        
+
+            <p class="lead"> Azure US  : {{ totalCount_azure_cc2 }}</p>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">            
+
+            Search By:
+            <select class="form-control" ng-model='SearchTerm'>
+                <option value='$'>Any</option>
+                <option value='tenantName'>Name</option>
+                <option value='tier'>Type</option>
+                <option value='currentVersion'>Version</option>
+                <option value='tenantStatus'>Status</option>
+            </select>
+        </div>
+        <div class="col-md-8">
+            Search Key:
+            <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
+        </div>
+    </div>
+    <br />
+
+
+    <table class="table table-striped table-hover table-bordered">
+        <tr>
+            <th style="width: 50px;">ID</th>
+            <th style="width: 200px;">Tenant Name</th>
+            <th style="width: 200px;">Type</th>
+            <th style="width: 200px;">Status</th>
+            <th style="width: 200px;">Version</th>
+            <th style="width: 200px;">Created</th>
+            <th style="width: 200px;">Updated</th>
+        </tr>
+        <tr ng-repeat="connD2 in allrows_cconns2_azure | orderBy : 'tenantName' | filter: searchKeyword">
+            <td>{{ $index+1 }}</td>
+          <td>{{ connD2.tenantName }}</td>
+          <td>{{ connD2.tier }}</td>
+          <td>{{ connD2.tenantStatus }}</td>
+          <td>{{ formatVersion(connD2.currentVersion) }}</td>
+          <td>{{ connD2.creationDate }}</td>
+          <td>{{ connD2.latestChangeDate }}</td>
+        </tr>
+      </table>
+</div>
+<!-- Azure EU           -->
       
-   <div id="Testjobs" class="container-fluid wmiotabtype tabcontent">
+      <div id="AzurePRODEU" class="container-fluid wmiotabtype tabcontent">
+        <div class="container-fluid row">
+            <p class="lead"> Azure EU  : {{ totalCount_azure_cc }}</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                Search By:
+                <select class="form-control" ng-model='SearchTerm'>
+                    <option value='$'>Any</option>
+                    <option value='tenantName'>Name</option>
+                    <option value='tier'>Type</option>
+                    <option value='currentVersion'>Version</option>
+                    <option value='tenantStatus'>Status</option>
+                </select>
+            </div>
+            <div class="col-md-8">
+                Search Key:
+                <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
+            </div>
+        </div>
+        <br />
+
+
+        <table class="table table-striped table-hover table-bordered">
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th style="width: 200px;">Tenant Name</th>
+                <th style="width: 200px;">Type</th>
+                <th style="width: 200px;">Status</th>
+                <th style="width: 200px;">Version</th>
+                <th style="width: 200px;">Created</th>
+                <th style="width: 200px;">Updated</th>
+            </tr>
+            <tr ng-repeat="connD in allrows_cconns_azure | orderBy : 'tenantName' | filter: searchKeyword">
+                <td>{{ $index+1 }}</td>
+              <td>{{ connD.tenantName }}</td>
+              <td>{{ connD.tier }}</td>
+              <td>{{ connD.tenantStatus }}</td>
+              <td>{{ formatVersion(connD.currentVersion) }}</td>
+              <td>{{ connD.creationDate }}</td>
+              <td>{{ connD.latestChangeDate }}</td>
+            </tr>
+          </table>
+     </div>
+
+
+
+
+    <!-- Azure AU           -->
+    <div id="AzurePRODAU" class="container-fluid wmiotabtype tabcontent">
+        
+        <div class="container-fluid row">
+            <p class="lead"> Azure AU  : {{ totalCount_azure_cc3 }}</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                Search By:
+                <select class="form-control" ng-model='SearchTerm'>
+                    <option value='$'>Any</option>
+                    <option value='tenantName'>Name</option>
+                    <option value='tier'>Type</option>
+                    <option value='currentVersion'>Version</option>
+                    <option value='tenantStatus'>Status</option>
+                </select>
+            </div>
+            <div class="col-md-8">
+                Search Key:
+                <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
+            </div>
+        </div>
+        <br />
+
+
+        <table class="table table-striped table-hover table-bordered">
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th style="width: 200px;">Tenant Name</th>
+                <th style="width: 200px;">Type</th>
+                <th style="width: 200px;">Status</th>
+                <th style="width: 200px;">Version</th>
+                <th style="width: 200px;">Created</th>
+                <th style="width: 200px;">Updated</th>
+            </tr>
+            <tr ng-repeat="connD2 in allrows_cconns3_azure | orderBy : 'tenantName' | filter: searchKeyword">
+                <td>{{ $index+1 }}</td>
+              <td>{{ connD2.tenantName }}</td>
+              <td>{{ connD2.tier }}</td>
+              <td>{{ connD2.tenantStatus }}</td>
+              <td> {{ formatVersion(connD2.currentVersion) }} </td>
+              <td>{{ connD2.creationDate }}</td>
+              <td>{{ connD2.latestChangeDate }}</td>
+            </tr>
+          </table>
+  </div>
+
+  <!-- ###########################################  End of Azure ################################## -->
+
+  <!--                 Schedules                 -->
+
+  
+  <div id="Schedules" class="container-fluid wmiotabtype tabcontent">
     
 
     <p>Schedules in next 30 days. For now only 10.12</p>
@@ -216,18 +433,18 @@
 
     <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 500px;">
        
-        <button class="tablinks" onclick="connectorTabs2('AWSTEST')" style=" background: darkseagreen; width: 30%;" id="defaultOpen2">AWS</button>
-        <button class="tablinks" onclick="connectorTabs2('AzureTEST')" style="background: darkturquoise; width: 30%;" >Azure</button> 
-        <button class="tablinks" onclick="connectorTabs2('NONFUNCTIONAL')" style=" width: 33%;" >NON FUNCTIONAL</button> 
+        <button class="tablinks" onclick="connectorTabs2('AWSSchedules')" style=" background: darkseagreen; width: 30%;" id="defaultOpen2">AWS</button>
+        <button class="tablinks" onclick="connectorTabs2('AzureSchedules')" style="background: darkturquoise; width: 30%;" >Azure</button> 
+        <button class="tablinks" onclick="connectorTabs2('ProdFixesTrail')" style=" width: 33%;" >Prod Fixes</button> 
       </div>
 
-    <div id="AWSTESST" class="wmiotabtype2 tabcontent"> 
+    <div id="AWSSchedules" class="wmiotabtype2 tabcontent"> 
 
         <div >
             <h2>Schedules AWS</h2>
             
             <div class="row">
-              <div class="col-md-4" >
+              <div class="col-md-6" >
     
                 <div>
                     <!--                 AWS US                 -->
@@ -244,7 +461,7 @@
     
               </div>
           
-              <div class="col-md-4" >
+              <div class="col-md-6" >
                 <div>
                      
                     <div>
@@ -263,7 +480,7 @@
                 </div>
               </div>
           
-              <div class="col-md-4" >
+              <div class="col-md-0" >
                
                 <div>
                     <!--                 AWS AU                 -->
@@ -291,7 +508,7 @@
 
 
 
-    <div id="AzureTEST" class="  wmiotabtype2 tabcontent"> 
+    <div id="AzureSchedules" class="  wmiotabtype2 tabcontent"> 
         
         <div >
             <h2>Schedules Azure</h2>
@@ -355,7 +572,7 @@
     </div>
 
     
-    <div id="NONFUNCTIONAL" class="  wmiotabtype2 tabcontent"> 
+    <div id="ProdFixesTrail" class="  wmiotabtype2 tabcontent"> 
         Comming soon...
         <div class="row " id="myrepos">
 
@@ -435,8 +652,6 @@
 
 
 
-
-  
 
 
 </body>
