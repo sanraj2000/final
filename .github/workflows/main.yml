@@ -27,10 +27,10 @@ jobs:
 
     
 
-      - name: GET all dev
-        id: tms1
-        run: | 
-          curl --user apigw:XCZZpHNh4eJTTs4f --location --request GET 'https://tms.apigw-aw-us.webmethods-dev.io/tms/v1/tenants' --header 'Accept: application/json' -o ./output/dev.json
+    #  - name: GET all dev
+     #   id: tms1
+      #  run: | 
+       #   curl --user apigw:XCZZpHNh4eJTTs4f --location --request GET 'https://tms.apigw-aw-us.webmethods-dev.io/tms/v1/tenants' --header 'Accept: application/json' -o ./output/dev.json
 
     
 
