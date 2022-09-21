@@ -34,10 +34,10 @@ jobs:
 
     
 
-      - name: GET all int
-        id: int
-        run: | 
-          curl --user apigw:b24tVucfEus4zQyQ --location --request GET 'https://tms.apigw-aw-us.webmethods-int.io/tms/v1/tenants' --header 'Accept: application/json' -o ./output/int.json
+    #  - name: GET all int
+     #   id: int
+      #  run: | 
+       #   curl --user apigw:b24tVucfEus4zQyQ --location --request GET 'https://tms.apigw-aw-us.webmethods-int.io/tms/v1/tenants' --header 'Accept: application/json' -o ./output/int.json
             
             
        
@@ -51,11 +51,11 @@ jobs:
           push_options: '--force'
           create_branch: true  
       
-      - name: Upload performance test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: report
-          path: dev.json
+  #    - name: Upload performance test results
+   #     uses: actions/upload-artifact@v3
+    #    with:
+     #     name: report
+      #    path: dev.json
 
     #  - name: Download performance test results
      #   uses: actions/download-artifact@v3
