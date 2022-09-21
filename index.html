@@ -42,6 +42,7 @@
         <button class="tablinks" onclick="connectorTabs('DEVTENANTS')"  id="defaultOpen" style="background: darkseagreen;">DEV</button>
         <button class="tablinks" onclick="connectorTabs('STAGETENANTS') " style="background: darkseagreen;">STAGE</button>        
         <button class="tablinks" onclick="connectorTabs('INTTENANTS')" style="background: darkseagreen;">INT</button>
+          <button class="tablinks" onclick="connectorTabs('TESTJOBS')" >TEST JOBS</button>
        
 
       </div>
@@ -206,7 +207,81 @@
             </tr>
           </table>
   </div>
+ <!----------------TEST JOBS-------------------->
+    
+ <div id="Schedules" class="container-fluid wmiotabtype tabcontent">
+   <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 500px;">
+       
+        <button class="tablinks" onclick="connectorTabs2('AWSSchedules')" style=" background: darkseagreen; width: 30%;" id="defaultOpen2">AWS</button>
+        <button class="tablinks" onclick="connectorTabs2('AzureSchedules')" style="background: darkturquoise; width: 30%;" >Azure</button> 
+        <button class="tablinks" onclick="connectorTabs2('ProdFixesTrail')" style=" width: 33%;" >Prod Fixes</button> 
+      </div>
+    
+    <div id="AWSSchedules" class="wmiotabtype2 tabcontent"> 
+
+        <div >
+            <h2>Schedules AWS</h2>
+            
+            <div class="row">
+              <div class="col-md-4" >
+    
+                <div>
+                    <!--                 AWS US                 -->
+                    <div class="container-fluid  col text-white" style="background-color:rgb(131, 219, 235);">
+                        <p class="lead"> AWS US  : {{ totalschedules1_c }}</p>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered">
+                        <tr ng-repeat="schedules in allrows_schedules1">
+                          <td>{{ schedules.tenantName }}</td>
+                          <td>{{ schedules.scheduledFix.scheduledDate }}</td>
+                        </tr>
+                      </table>
+                </div>
+    
+              </div>
+          
+              <div class="col-md-4" >
+                <div>
+                     
+                    <div>
+                        <!--                 AWS EU                 -->
+                        <div class="container-fluid  col text-white" style="background-color:rgb(222, 218, 248);">
+                            <p class="lead"> AWS EU  : {{ totalschedules2_c }}</p>
+                        </div>
+                        <table class="table table-striped table-hover table-bordered">
+                            <tr ng-repeat="schedules in allrows_schedules2">
+                              <td>{{ schedules.tenantName }}</td>
+                              <td>{{ schedules.scheduledFix.scheduledDate }}</td>
+                            </tr>
+                          </table>
+                    </div>
+
+                </div>
+              </div>
+          
+              <div class="col-md-4" >
+               
+                <div>
+                    <!--                 AWS AU                 -->
+                    <div class="container-fluid  col text-white" style="background-color:rgb(198, 241, 238);">
+                        <p class="lead"> AWS AU  : {{ totalschedules3_c }}</p>
+                    </div>
+                    <table class="table table-striped table-hover table-bordered">
+                        <tr ng-repeat="schedules in allrows_schedules3">
+                          <td>{{ schedules.tenantName }}</td>
+                          <td>{{ schedules.scheduledFix.scheduledDate }}</td>
+                        </tr>
+                      </table>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+
+    </div>
+
  
+ </div>      
 
 
  
