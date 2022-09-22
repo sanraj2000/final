@@ -187,10 +187,7 @@ console.log("started");
              if(tabName === "TESTJOBS"){
               document.getElementById('defaultOpen2').click();
             }
-            document.getElementById(tabName).style.display = "block";
-             if(tabName === "ACTIONS"){
-              document.getElementById('defaultOpen3').click();
-            }
+          
            
           }
           //// Get the element with id="defaultOpen" and click on it
