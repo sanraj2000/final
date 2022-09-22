@@ -321,6 +321,33 @@
             
     <!----------------CI/CD ACTIONS HANDLERS------------------->
 <div id="ACTIONHANDLERS"    class="container-fluid wmiotabtype tabcontent">
+        
+        
+        
+         <div class="container-fluid row">
+            <p class="lead"># INT TENANTS  : {{ totalCount_cc3 }}</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                Search By:
+                <select class="form-control" ng-model='SearchTerm'>
+                    <option value='$'>Any</option>
+                    <option value='tenantName'>Name</option>
+                    <option value='tier'>Type</option>
+                    <option value='currentVersion'>Version</option>
+                    <option value='tenantStatus'>Status</option>
+                </select>
+            </div>
+            <div class="col-md-8">
+                Search Key:
+                <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
+            </div>
+        </div>
+        <br />
+
+        
+        
+        
         <div class="row">
   <div class="col-sm-6">
     <div class="card">
