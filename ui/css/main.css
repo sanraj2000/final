@@ -207,9 +207,9 @@ body {
   padding: 0.7em 1.4em 0.7em 1.1em;
   color: black;
   background: #ad5389;
-  background: linear-gradient(0deg, rgba(128,128,128,1) 0%, rgba(128,128,128,1) 100%);
+  background: linear-gradient(0deg, rgba(192,192,192,1) 0%, rgba(192,192,192,1) 100%);
   border: none;
-  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  box-shadow: 0 0.7em 1.5em -0.5em #C0C0C0;
   letter-spacing: 0.05em;
   border-radius: 20em;
   cursor: pointer;
@@ -219,7 +219,7 @@ body {
 }
 
 .buttoninfo2:hover {
-  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+  box-shadow: 0 0.5em 1.5em -0.5em #C0C0C0;
 }
 
 
