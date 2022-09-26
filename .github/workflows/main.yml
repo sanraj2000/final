@@ -41,7 +41,7 @@ jobs:
             
       - name: "GREP"
         run:
-          sed -n '27,28p'  ./output/webscrap.txt  > ./output/status/awsdevbvtstatus.txt 
+          sed -n '27,28p'  ./output/webscrap.txt  > ./output/build/awsdevbvt.txt 
        
              
       - name: "Put back details for dev"
