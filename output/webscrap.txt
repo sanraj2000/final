@@ -1,0 +1,31 @@
+                        Took <a href="/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/buildTimeTrend">12 min</a></div></div><h1 class="build-caption page-headline"><img src="/static/753443d8/images/48x48/aborted.png" alt="Aborted" tooltip="Aborted" style="width: 48px; height: 48px; " class="icon-aborted icon-xlg"><script>
+          (function(){
+            function updateBuildCaptionIcon(){
+              new Ajax.Request("statusIcon",{
+                method: "get",
+                onComplete: function(rsp,_) {
+                  var isBuilding = rsp.getResponseHeader("X-Building");
+                  if (isBuilding == "true") {
+                    setTimeout(updateBuildCaptionIcon, 5000)
+                  } else {
+                    var progressBar = document.querySelector(".build-caption-progress-container");
+                    if (progressBar) {
+                      progressBar.style.display = "none";
+                    }
+                  }
+                  document.querySelector(".build-caption .icon-xlg").outerHTML = rsp.responseText;
+                }
+              });
+            }
+
+            window.addEventListener("load", function(){
+              Event.observe(window, "jenkins:consoleFinished", updateBuildCaptionIcon);
+            });
+
+          })();
+        </script>
+                Build #157
+                (Jun 15, 2022 1:52:26 PM)
+            </h1><div><div id="description"><div></div></div></div><table style="margin-top: 1em; margin-left:1em;"><tr><td><img src="/static/753443d8/images/48x48/notepad.png" style="width: 48px; height: 48px; " class="icon-notepad icon-xlg"></td><td style="vertical-align:middle">
+      Changes
+      <ol><li>Merge pull request #3958 from AIM/bugfix/release-1012
