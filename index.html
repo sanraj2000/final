@@ -5,165 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TENANT DETAILS</title>
-    <!-- bootstrap 4 css -->
+    <title>TENANT DETAILS</title> <!-- bootstrap 4 css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="./detailsShow/img/fav_sag_cloud.png">
-    <!-- google font -->
+    <link rel="icon" type="image/png" href="./detailsShow/img/fav_sag_cloud.png"> <!-- google font -->
     <!-- custom css -->
     <link rel="stylesheet" href="./ui/css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <!-- custom js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- custom js -->
     <script src="./ui/js/main.js"></script>
-
-
-    <script>
-      
-        </script>
-
+    <script> </script>
 </head>
 
-<body ng-app="cetApp" ng-controller="cetCtrl"  onload="document.getElementById('defaultOpen').click();">
-    
-  
-
+<body ng-app="cetApp" ng-controller="cetCtrl" onload="document.getElementById('defaultOpen').click();">
     <div class="container-fluid  headerBlock col bg-info text-white">
         <h1 class="display-5">APIGW CLOUD</h1>
         <p class="lead"> List of Test Tenant details</p>
     </div>
-
-
- 
-    
-    <div class="tab" style="margin-left: 76px; margin-right: 76px; margin-top: 20px;">
-       
-        <button class="tablinks" onclick="connectorTabs('DEVTENANTS')"  id="defaultOpen" style="background: darkseagreen;">DEV</button>
-        <button class="tablinks" onclick="connectorTabs('STAGETENANTS') " style="background: darkseagreen;">STAGE</button>        
-        <button class="tablinks" onclick="connectorTabs('INTTENANTS')" style="background: darkseagreen;">INT</button>
-        <button class="tablinks" onclick="connectorTabs('ACTION')" id="defaultOpen3" style="background: darkturquoise;">ACTION HANDLERS</button>
-          <button class="tablinks" onclick="connectorTabs('TESTJOBS')" style="background: darkturquoise;">TEST JOBS</button>
-        
-       
-
-      </div>
-    
- 
-
-<!-- DEV TENANTS          -->
-
-<div id="DEVTENANTS" class="container-fluid wmiotabtype tabcontent">
-    <div class="container-fluid row">        
-
-            <p class="lead"> # DEV TENANTS : {{ totalCount_cc2 }}</p>
-
-    </div>
- 
-    <br />
-
-   <!-- new sear4ch-->
-     <div class="row">
-            <div class="col-md-4">
-                Search By:
-                <select class="form-control" ng-model='SearchTerm'>
-                    <option value='$'>Any</option>
-                    <option value='tenantName'>Name</option>
-                    <option value='tier'>Type</option>
-                    <option value='currentVersion'>Version</option>
-                    <option value='tenantStatus'>Status</option>
-                </select>
-            </div>
-            <div class="col-md-8">
-                Search Key:
-                <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
-            </div>
-        </div>
-        <br />
-
- 
-<!-- new search end-->
-                
-
-   
-
-    <table class="table table-striped table-hover table-bordered">
-        <tr>
-            <th style="width: 50px;">ID</th>
-            <th style="width: 200px;">Tenant Name</th>
-            <th style="width: 200px;">Type</th>
-            <th style="width: 200px;">Status</th>
-            <th style="width: 200px;">Email</th>
-            <th style="width: 200px;">Version</th>
-            <th style="width: 200px;">Created</th>
-            <th style="width: 200px;">Updated</th>
-        </tr>
-        <tr ng-repeat="connD2 in allrows_cconns2 | orderBy : 'tenantName' | filter: searchKeyword | startFrom:currentPage1*pageSize1 | limitTo:pageSize1">
-            <td>{{ $index+1 }}</td>
-          <td>{{ connD2.tenantName }}</td>
-          <td>{{ connD2.tier }}</td>
-          <td>{{ connD2.tenantStatus }}</td>
-          <td>{{ connD2.tenantEmail }}</td> 
-          <td> {{ formatVersion(connD2.currentVersion) }} </td>
-          <td> {{ formatDate(connD2.creationDate) }}   </td>
-          <td> {{ formatDate(connD2.latestChangeDate) }}  </td>
-        </tr>
-      </table>
-</div>
-    <!------------------------------------------------------------------------>
-   <div id="ACTION" class="container-fluid wmiotabtype tabcontent">
-    <div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Disabled</a>
-      </li>
-    </ul>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-</div>
-    
-    
-    
-    
-    
-<!-- STAGE TENANTS          -->
-      
-      <div id="STAGETENANTS" class="container-fluid wmiotabtype tabcontent">
+    <div class="tab" style="margin-left: 76px; margin-right: 76px; margin-top: 20px;"> <button class="tablinks" onclick="connectorTabs('DEVTENANTS')" id="defaultOpen" style="background: darkseagreen;">DEV</button> <button class="tablinks" onclick="connectorTabs('STAGETENANTS') " style="background: darkseagreen;">STAGE</button> <button class="tablinks" onclick="connectorTabs('INTTENANTS')" style="background: darkseagreen;">INT</button> <button class="tablinks" onclick="connectorTabs('ACTION')" id="defaultOpen3" style="background: darkturquoise;">ACTION HANDLERS</button> <button class="tablinks" onclick="connectorTabs('TESTJOBS')" style="background: darkturquoise;">TEST JOBS</button> </div> <!-- DEV TENANTS          -->
+    <div id="DEVTENANTS" class="container-fluid wmiotabtype tabcontent">
         <div class="container-fluid row">
-            <p class="lead"> # STAGE TENANTS  : {{ totalCount_cc }}</p>
-        </div>
-
+            <p class="lead"> # DEV TENANTS : {{ totalCount_cc2 }}</p>
+        </div> <br /> <!-- new sear4ch-->
         <div class="row">
-            <div class="col-md-4">
-                Search By:
-                <select class="form-control" ng-model='SearchTerm'>
+            <div class="col-md-4"> Search By: <select class="form-control" ng-model='SearchTerm'>
                     <option value='$'>Any</option>
                     <option value='tenantName'>Name</option>
                     <option value='tier'>Type</option>
                     <option value='currentVersion'>Version</option>
                     <option value='tenantStatus'>Status</option>
-                </select>
+                </select> </div>
+            <div class="col-md-8"> Search Key: <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]"> </div>
+        </div> <br /> <!-- new search end-->
+        <table class="table table-striped table-hover table-bordered">
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th style="width: 200px;">Tenant Name</th>
+                <th style="width: 200px;">Type</th>
+                <th style="width: 200px;">Status</th>
+                <th style="width: 200px;">Email</th>
+                <th style="width: 200px;">Version</th>
+                <th style="width: 200px;">Created</th>
+                <th style="width: 200px;">Updated</th>
+            </tr>
+            <tr ng-repeat="connD2 in allrows_cconns2 | orderBy : 'tenantName' | filter: searchKeyword | startFrom:currentPage1*pageSize1 | limitTo:pageSize1">
+                <td>{{ $index+1 }}</td>
+                <td>{{ connD2.tenantName }}</td>
+                <td>{{ connD2.tier }}</td>
+                <td>{{ connD2.tenantStatus }}</td>
+                <td>{{ connD2.tenantEmail }}</td>
+                <td> {{ formatVersion(connD2.currentVersion) }} </td>
+                <td> {{ formatDate(connD2.creationDate) }} </td>
+                <td> {{ formatDate(connD2.latestChangeDate) }} </td>
+            </tr>
+        </table>
+    </div>
+    <!------------------------------------------------------------------------>
+    <div id="ACTION" class="container-fluid wmiotabtype tabcontent">
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item"> <a class="nav-link active" href="#">Active</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" href="#">Link</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" href="#">Disabled</a> </li>
+                </ul>
             </div>
-            <div class="col-md-8">
-                Search Key:
-                <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <br />
-
-
-        <table class="table table-striped table-hover table-bordered" >
+    </div> <!-- STAGE TENANTS          -->
+    <div id="STAGETENANTS" class="container-fluid wmiotabtype tabcontent">
+        <div class="container-fluid row">
+            <p class="lead"> # STAGE TENANTS : {{ totalCount_cc }}</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4"> Search By: <select class="form-control" ng-model='SearchTerm'>
+                    <option value='$'>Any</option>
+                    <option value='tenantName'>Name</option>
+                    <option value='tier'>Type</option>
+                    <option value='currentVersion'>Version</option>
+                    <option value='tenantStatus'>Status</option>
+                </select> </div>
+            <div class="col-md-8"> Search Key: <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]"> </div>
+        </div> <br />
+        <table class="table table-striped table-hover table-bordered">
             <tr>
                 <th style="width: 50px;">ID</th>
                 <th style="width: 200px;">Tenant Name</th>
@@ -175,45 +101,30 @@
             </tr>
             <tr ng-repeat="connD in allrows_cconns | orderBy : 'tenantName' | filter: searchKeyword">
                 <td>{{ $index+1 }}</td>
-              <td>{{ connD.tenantName }}</td>
-              <td>{{ connD.tier }}</td>
-              <td>{{ connD.tenantStatus }}</td>
-              <td>{{ formatVersion(connD.currentVersion) }}</td>
-              <td>{{ formatDate(connD.creationDate) }}</td>
-              <td>{{ formatDate(connD.latestChangeDate) }}</td>
+                <td>{{ connD.tenantName }}</td>
+                <td>{{ connD.tier }}</td>
+                <td>{{ connD.tenantStatus }}</td>
+                <td>{{ formatVersion(connD.currentVersion) }}</td>
+                <td>{{ formatDate(connD.creationDate) }}</td>
+                <td>{{ formatDate(connD.latestChangeDate) }}</td>
             </tr>
-          </table>
-     </div>
-
-
-
-
-    <!-- INT TENANTS          -->
+        </table>
+    </div> <!-- INT TENANTS          -->
     <div id="INTTENANTS" class="container-fluid wmiotabtype tabcontent">
-        
         <div class="container-fluid row">
-            <p class="lead"># INT TENANTS  : {{ totalCount_cc3 }}</p>
+            <p class="lead"># INT TENANTS : {{ totalCount_cc3 }}</p>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                Search By:
-                <select class="form-control" ng-model='SearchTerm'>
+            <div class="col-md-4"> Search By: <select class="form-control" ng-model='SearchTerm'>
                     <option value='$'>Any</option>
                     <option value='tenantName'>Name</option>
                     <option value='tier'>Type</option>
                     <option value='currentVersion'>Version</option>
                     <option value='tenantStatus'>Status</option>
-                </select>
-            </div>
-            <div class="col-md-8">
-                Search Key:
-                <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
-            </div>
-        </div>
-        <br />
-
-
-        <table  class="table table-striped table-hover table-bordered">
+                </select> </div>
+            <div class="col-md-8"> Search Key: <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]"> </div>
+        </div> <br />
+        <table class="table table-striped table-hover table-bordered">
             <tr>
                 <th style="width: 50px;">ID</th>
                 <th style="width: 200px;">Tenant Name</th>
@@ -226,457 +137,281 @@
             </tr>
             <tr ng-repeat="connD2 in allrows_cconns3 | orderBy : 'tenantName' | filter: searchKeyword">
                 <td>{{ $index+1 }}</td>
-              <td>{{ connD2.tenantName }}</td>
-              <td>{{ connD2.tier }}</td>
-              <td>{{ connD2.tenantStatus }}</td>
-              <td>{{ connD2.tenantEmail }}</td>  
-              <td>{{ formatVersion(connD2.currentVersion) }}</td>
-              <td>{{ formatDate(connD2.creationDate) }}</td>
-              <td>{{ formatDate(connD2.latestChangeDate) }}</td>
+                <td>{{ connD2.tenantName }}</td>
+                <td>{{ connD2.tier }}</td>
+                <td>{{ connD2.tenantStatus }}</td>
+                <td>{{ connD2.tenantEmail }}</td>
+                <td>{{ formatVersion(connD2.currentVersion) }}</td>
+                <td>{{ formatDate(connD2.creationDate) }}</td>
+                <td>{{ formatDate(connD2.latestChangeDate) }}</td>
             </tr>
-          </table>
-  </div>
- <!----------------TEST JOBS-------------------->
-    
- <div id="TESTJOBS" class="container-fluid wmiotabtype tabcontent">
-   <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 500px;">
-       
-        <button class="tablinks" onclick="connectorTabs2('AWSTEST')" style=" background: darkseagreen; width: 30%;" id="defaultOpen2">AWS </button>
-        <button class="tablinks" onclick="connectorTabs2('AZURETEST')" style=" background: darkseagreen; width: 30%;" >AZure </button>
-        <button class="tablinks" onclick="connectorTabs2('NONFUNCTIONAL')" style=" background: darkseagreen; width: 33%;" >NonFunctional </button>
-       
-        
+        </table>
     </div>
-     
-     
-     
-      <div id="AZURETEST" class="  wmiotabtype2 tabcontent"> 
-      
-              <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >DEV</button>
-         
+    <!----------------TEST JOBS-------------------->
+    <div id="TESTJOBS" class="container-fluid wmiotabtype tabcontent">
+        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 500px;"> <button class="tablinks" onclick="connectorTabs2('AWSTEST')" style=" background: darkseagreen; width: 30%;" id="defaultOpen2">AWS </button> <button class="tablinks" onclick="connectorTabs2('AZURETEST')" style=" background: darkseagreen; width: 30%;">AZure </button> <button class="tablinks" onclick="connectorTabs2('NONFUNCTIONAL')" style=" background: darkseagreen; width: 33%;">NonFunctional </button> </div>
+        <div id="AZURETEST" class="  wmiotabtype2 tabcontent">
+          <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card  bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title">TRUNK</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><object width="300" height="80" type="text/plain" data="./output/buildno/awsdevbvt.txt" border="0"> </object><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" class="btn btn-link" role="button" target="_blank" data-mdb-ripple-color="dark">YAIC-AWS-DEV-BVT </a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-INT-BVT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card bg-light ">
+                        <div class="card-body">
+                            <h5 class="card-title">SPRO</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-1012-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-SPRO-1012-SPLIT-RUN</a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT</a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011</a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT-SPRO-1011</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-          
-          <ul class="list-group list-group-flush">
-                          <li class="list-group-item"><object width="300" height="80" type="text/plain" data="./output/buildno/awsdevbvt.txt" border="0" >
-</object><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/"  class="btn btn-link" role="button" target="_blank" data-mdb-ripple-color="dark" >YAIC-AWS-DEV-BVT </a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-INT-BVT</a></li>        
-                                                                                                   
-      </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light ">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-          <ul class="list-group list-group-flush">
-               <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-1012-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-SPRO-1012-SPLIT-RUN</a></li>         
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT-SPRO-1011</a></li>
-  
-    </ul>
-       
-      </div>
-    </div>
-  </div>
+            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">AWS</button> </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card  bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title">TRUNK</h5>
+                            <ul class="list-group list-group-flush"> </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card bg-light ">
+                        <div class="card-body">
+                            <h5 class="card-title">SPRO</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-1011-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-SPRO-1011-SPLIT-RUN</a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT</a></li>
+                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT-SPRO-1011</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-      <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >AWS</button>
-         
-            </div>
-    
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-          
-          <ul class="list-group list-group-flush">
-     </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light ">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-1011-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-SPRO-1011-SPLIT-RUN</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT-SPRO-1011</a></li>
-  
-     </ul>
-       
-      </div>
-    </div>
-  </div>
-        
-            
-            
-    
-     
-     
-     
-     
-     
-    <div id="AWSTEST" class="  wmiotabtype2 tabcontent"> 
-      
-              <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >DEV</button>
-         
-            </div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-          
-          <ul class="list-group list-group-flush">
-                          <li class="list-group-item"><object width="300" height="80" type="text/plain" data="./output/buildno/awsdevbvt.txt" border="0" >
-</object><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/"  class="btn btn-link" role="button" target="_blank" data-mdb-ripple-color="dark" >YAIC-AWS-DEV-BVT </a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-INT-BVT</a></li>        
-                                                                                                   
-      </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light ">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-          <ul class="list-group list-group-flush">
-               <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-1012-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-SPRO-1012-SPLIT-RUN</a></li>         
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT-SPRO-1011</a></li>
-  
-    </ul>
-       
-      </div>
-    </div>
-  </div>
-            </div>
-      <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >AWS</button>
-         
-            </div>
-    
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-          
-          <ul class="list-group list-group-flush">
-     </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light ">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-1011-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-SPRO-1011-SPLIT-RUN</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT-SPRO-1011</a></li>
-  
-     </ul>
-       
-      </div>
-    </div>
-  </div>
-        
-            </div>     
-            
-    
-            
-     <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >NON FUNCTIONAL</button>
-         
-            </div>
-              <div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">CHAOS-TESTS</h5>
-          
-          <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/"  class="buttoninfo2" role="button" target="_blank"  >YAIC-CHAOS-TESTS</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" class="buttoninfo2 role="button" target="_blank" >YAIC-UPGRADE-END-TO-END</a></li>
-                                    
-      </ul>
-        
-      </div>
-    </div>
-  </div>  
-  </div>  
-    
-        
-        
-        
-        
-        
-<div id="AZURETEST" class="  wmiotabtype2 tabcontent"> 
-       
-              <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >DEV</button>
-         
-            </div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-          
-          <ul class="list-group list-group-flush">
-                          <li class="list-group-item"><object width="300" height="80" type="text/plain" data="./output/buildno/awsdevbvt.txt" border="0" >
-</object><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/"  class="btn btn-link" role="button" target="_blank" data-mdb-ripple-color="dark" >YAIC-AWS-DEV-BVT </a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-INT-BVT</a></li>        
-                                                                                                   
-      </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light ">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-          <ul class="list-group list-group-flush">
-               <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-1012-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-SPRO-1012-SPLIT-RUN</a></li>         
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT-SPRO-1011</a></li>
-  
-    </ul>
-       
-      </div>
-    </div>
-  </div>
-            </div>
-      <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >AWS</button>
-         
-            </div>
-    
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-          
-          <ul class="list-group list-group-flush">
-     </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light ">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-1011-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-SPRO-1011-SPLIT-RUN</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT-SPRO-1011</a></li>
-  
-     </ul>
-       
-      </div>
-    </div>
-  </div>
-        
-            </div>     
-            
-    
-            
-     <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >NON FUNCTIONAL</button>
-         
-            </div>
-              <div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">CHAOS-TESTS</h5>
-          
-          <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/"  class="buttoninfo2" role="button" target="_blank"  >YAIC-CHAOS-TESTS</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" class="buttoninfo2 role="button" target="_blank" >YAIC-UPGRADE-END-TO-END</a></li>
-                                    
-      </ul>
-        
-      </div>
-    </div>
-  </div>  
-  </div>          
-          
-            
-            
-            
-            
-            
-            
-            
-<div id="NONFUNCTIONAL" class="  wmiotabtype2 tabcontent"> 
-              <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >DEV</button>
-         
-            </div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-          
-          <ul class="list-group list-group-flush">
-                          <li class="list-group-item"><object width="300" height="80" type="text/plain" data="./output/buildno/awsdevbvt.txt" border="0" >
-</object><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/"  class="btn btn-link" role="button" target="_blank" data-mdb-ripple-color="dark" >YAIC-AWS-DEV-BVT </a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-INT-BVT</a></li>        
-                                                                                                   
-      </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light ">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-          <ul class="list-group list-group-flush">
-               <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-1012-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-SPRO-1012-SPLIT-RUN</a></li>         
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-STAGE-BVT-SPRO-1011</a></li>
-  
-    </ul>
-       
-      </div>
-    </div>
-  </div>
-            </div>
-      <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >AWS</button>
-         
-            </div>
-    
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-          
-          <ul class="list-group list-group-flush">
-     </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light ">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-1011-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-SPRO-1011-SPLIT-RUN</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT-SPRO-1011</a></li>
-  
-     </ul>
-       
-      </div>
-    </div>
-  </div>
-        
-            </div>     
-            
-    
-            
-     <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;">
-       
-               <button class="tablinks"  style="background: darkturquoise; width: 100%;" >NON FUNCTIONAL</button>
-         
-            </div>
-              <div class="row">
-  <div class="col-sm-6">
-    <div class="card  bg-light">
-      <div class="card-body">
-        <h5 class="card-title">CHAOS-TESTS</h5>
-          
-          <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/"  class="buttoninfo2" role="button" target="_blank"  >YAIC-CHAOS-TESTS</a></li>
-    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" class="buttoninfo2 role="button" target="_blank" >YAIC-UPGRADE-END-TO-END</a></li>
-                                    
-      </ul>
-        
-      </div>
-    </div>
-  </div>  
-  </div>              
-            
-            
-            
-            
-            
-    
-       
-
-    
-   
-            
-    <!----------------CI/CD ACTIONS HANDLERS------------------->
-        
- 
-            
-        
-        
-        
-        
-        
-        
- </div>      
-
-
-
-
-
-
-
-</div>
-
-
+        </div>        
+            <div id="AWSTEST" class="  wmiotabtype2 tabcontent">
+                    <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card  bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title">TRUNK</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><object width="300" height="80" type="text/plain" data="./output/buildno/awsdevbvt.txt" border="0"> </object><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" class="btn btn-link" role="button" target="_blank" data-mdb-ripple-color="dark">YAIC-AWS-DEV-BVT </a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-INT-BVT</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card bg-light ">
+                                <div class="card-body">
+                                    <h5 class="card-title">SPRO</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-1012-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-SPRO-1012-SPLIT-RUN</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT-SPRO-1011</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">AWS</button> </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card  bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title">TRUNK</h5>
+                                    <ul class="list-group list-group-flush"> </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card bg-light ">
+                                <div class="card-body">
+                                    <h5 class="card-title">SPRO</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-1011-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-SPRO-1011-SPLIT-RUN</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT-SPRO-1011</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">NON FUNCTIONAL</button> </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card  bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title">CHAOS-TESTS</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" class="buttoninfo2" role="button" target="_blank">YAIC-CHAOS-TESTS</a></li>
+                                        <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" class="buttoninfo2 role=" button" target="_blank">YAIC-UPGRADE-END-TO-END</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="AZURETEST" class="  wmiotabtype2 tabcontent">
+                        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card  bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">TRUNK</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><object width="300" height="80" type="text/plain" data="./output/buildno/awsdevbvt.txt" border="0"> </object><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" class="btn btn-link" role="button" target="_blank" data-mdb-ripple-color="dark">YAIC-AWS-DEV-BVT </a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-INT-BVT</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card bg-light ">
+                                    <div class="card-body">
+                                        <h5 class="card-title">SPRO</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-1012-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-SPRO-1012-SPLIT-RUN</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT-SPRO-1011</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">AWS</button> </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card  bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">TRUNK</h5>
+                                        <ul class="list-group list-group-flush"> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card bg-light ">
+                                    <div class="card-body">
+                                        <h5 class="card-title">SPRO</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-1011-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-SPRO-1011-SPLIT-RUN</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT-SPRO-1011</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">NON FUNCTIONAL</button> </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card  bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">CHAOS-TESTS</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" class="buttoninfo2" role="button" target="_blank">YAIC-CHAOS-TESTS</a></li>
+                                            <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" class="buttoninfo2 role=" button" target="_blank">YAIC-UPGRADE-END-TO-END</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="NONFUNCTIONAL" class="  wmiotabtype2 tabcontent">
+                            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card  bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title">TRUNK</h5>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item"><object width="300" height="80" type="text/plain" data="./output/buildno/awsdevbvt.txt" border="0"> </object><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" class="btn btn-link" role="button" target="_blank" data-mdb-ripple-color="dark">YAIC-AWS-DEV-BVT </a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-INT-BVT</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card bg-light ">
+                                        <div class="card-body">
+                                            <h5 class="card-title">SPRO</h5>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-1012-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-SPRO-1012-SPLIT-RUN</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN-1011</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-STAGE-BVT-SPRO-1011</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 100px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">AWS</button> </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card  bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title">TRUNK</h5>
+                                            <ul class="list-group list-group-flush"> </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card bg-light ">
+                                        <div class="card-body">
+                                            <h5 class="card-title">SPRO</h5>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-1011-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-SPRO-1011-SPLIT-RUN</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT-SPRO-1011/" class="buttoninfo2" role="button" target="_blank">YAIC-AZURE-STAGE-BVT-SPRO-1011</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">NON FUNCTIONAL</button> </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card  bg-light">
+                                        <div class="card-body">
+                                            <h5 class="card-title">CHAOS-TESTS</h5>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" class="buttoninfo2" role="button" target="_blank">YAIC-CHAOS-TESTS</a></li>
+                                                <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" class="buttoninfo2 role=" button" target="_blank">YAIC-UPGRADE-END-TO-END</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!----------------CI/CD ACTIONS HANDLERS------------------->
+                        </div>
+                    </div>
 </body>
+
 </html>
