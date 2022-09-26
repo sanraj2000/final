@@ -39,7 +39,9 @@ jobs:
       #  run: | 
        #   curl --user apigw:b24tVucfEus4zQyQ --location --request GET 'https://tms.apigw-aw-us.webmethods-int.io/tms/v1/tenants' --header 'Accept: application/json' -o ./output/int.json
             
-            
+      - name: "GREP"
+        run:
+          sed -n '27,28p'  ./output/webscrap.txt  > ./output/status/awsdevbvtstatus.txt 
        
              
       - name: "Put back details for dev"
