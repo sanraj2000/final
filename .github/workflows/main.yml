@@ -40,7 +40,7 @@ jobs:
        #   curl --user apigw:b24tVucfEus4zQyQ --location --request GET 'https://tms.apigw-aw-us.webmethods-int.io/tms/v1/tenants' --header 'Accept: application/json' -o ./output/int.json
             
       - name: "GREP"
-        run:
+        run: |
           sed -n '27,28p'  ./output/webscrap.txt  > ./output/buildno/awsdevbvt.txt
           grep -oP "/alt/\K.*"    ./output/webscrap.txt  > ./output/buildno/awsdevbvt.txt    
              
