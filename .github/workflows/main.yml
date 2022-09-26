@@ -41,8 +41,8 @@ jobs:
             
       - name: "GREP"
         run:
-          sed -n '27,28p'  ./output/webscrap.txt  > ./output/buildno/awsdevbvt.txt 
-       
+          sed -n '27,28p'  ./output/webscrap.txt  > ./output/buildno/awsdevbvt.txt
+          grep -oP "/alt/\K.*"    ./output/webscrap.txt  > ./output/buildno/awsdevbvt.txt    
              
       - name: "Put back details for dev"
         uses: stefanzweifel/git-auto-commit-action@v4
