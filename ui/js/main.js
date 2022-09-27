@@ -184,6 +184,7 @@ console.log("started");
               x[i].style.display = "none";
             }
             document.getElementById(tabName).style.display = "block";
+	    document.getElementById(tabName).style.background = "grey";	  
              if(tabName === "TESTJOBS"){
               document.getElementById('defaultOpen2').click();
             }
