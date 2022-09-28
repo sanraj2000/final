@@ -25,7 +25,7 @@
 <body ng-app="cetApp" ng-controller="cetCtrl" onload="document.getElementById('defaultOpen').click();">
     <div class="container-fluid  headerBlock col bg-info text-white">
         <h1 class="display-5">APIGW CLOUD</h1>
-        <p class="lead"> List of Test Tenants & Test Jobs  details</p>
+        <p class="lead"> List of Test Tenants & Test Jobs  details  {{ showtime }}</p>
     </div>
     <div class="tab" style="margin-left: 5%; margin-right: 5%; margin-top: 20px;"> <button class="tablinks" onclick="connectorTabs('DEVTENANTS')" id="defaultOpen" style="background: darkseagreen; width: 8%;"> DEV </button> <button class="tablinks" onclick="connectorTabs('STAGETENANTS') " style="background: darkseagreen; width: 8%;">STAGE</button> <button class="tablinks" onclick="connectorTabs('INTTENANTS')" style="background: darkseagreen; width: 8%;">INT</button>  <button class="tablinks" onclick="connectorTabs('TESTJOBS')" style="background: darkturquoise;">TEST JOBS</button> </div> <!-- DEV TENANTS          -->
     <div id="DEVTENANTS" class="container-fluid wmiotabtype tabcontent">
