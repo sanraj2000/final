@@ -159,6 +159,15 @@ console.log("started");
 
   // default first call
    $scope.callAll ("My First Call");
+		
+	$scope.formatDatetime = function (actualTimestamp){
+	 var actualDate = new Date(actualTimestamp)	
+
+          var fDate= actualDate.substring(0, 10) + " " + actualDate.substring(11,19) ;
+          return fDate
+      }	
+		
+	
 
 
           $scope.formatVersion = function (actualVersion){
