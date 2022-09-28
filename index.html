@@ -512,7 +512,7 @@
            
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">NON FUNCTIONAL</button> </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div class="card  bg-light">
                         <div class="card-body">
                             <h5 class="card-title">CHAOS-TESTS</h5>
@@ -520,7 +520,7 @@
                                 
                                 <li class="list-group-item">
                                      <div class="row">
-                                     <div class=" col-sm-6" > 	
+                                     <div class=" col-sm-3" > 	
                                      <table class="table table-striped table-hover table-bordered " >
                                         <tr>
                                             <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a></th>
@@ -540,7 +540,7 @@
                                         </tr>
                                     </table>
                                     </div>
-                                    <div class=" col-sm-6" >
+                                    <div class=" col-sm-3" >
                                      <table class="table table-striped table-hover table-bordered " >
                                         <tr>
                                             <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a></th>
@@ -560,6 +560,47 @@
                                         </tr>
                                     </table>
                                     </div>
+                                    
+                                     <div class=" col-sm-3" > 	
+                                     <table class="table table-striped table-hover table-bordered " >
+                                        <tr>
+                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a></th>
+                                        </tr>    
+                                          
+                                        <tr>
+                                            <th> Build # </th>
+                                            <td>{{showbuild}}</td>
+                                         </tr>
+                                         <tr>
+                                            <th> Date </th>
+                                            <td>{{showtime | date: 'yyyy-MM-dd  h:mm:ss a'}}</td>
+                                         </tr>
+                                         <tr>
+                                            <th> Status</th>
+                                            <td> {{showstatus}}</td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                    <div class=" col-sm-3" >
+                                     <table class="table table-striped table-hover table-bordered " >
+                                        <tr>
+                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a></th>
+                                        </tr>    
+                                          
+                                        <tr>
+                                            <th> Build # </th>
+                                            <td>{{showbuild}}</td>
+                                         </tr>
+                                         <tr>
+                                            <th> Date </th>
+                                            <td>{{showtime | date: 'yyyy-MM-dd  h:mm:ss a'}}</td>
+                                         </tr>
+                                         <tr>
+                                            <th> Status</th>
+                                            <td> {{showstatus}}</td>
+                                        </tr>
+                                    </table>
+                                    </div>     
                                     </div>     
                                 </li>
                                
