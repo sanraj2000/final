@@ -197,7 +197,7 @@ body {
 }
 
 .buttoninfo2 {
-	 width: 75%;
+	 width: fit-content;
 	
   display: flex;
   align-items: center;
