@@ -309,7 +309,7 @@
                                 <li class="list-group-item">
                                     <div class="table-responsive col-sm-6" >
     	
-                                     <table class="table table-striped table-hover table-bordered " >
+                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 30%;  width: 40%;" >
                                         <tr>
                                             <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a></th>
                                         </tr>    
@@ -519,28 +519,8 @@
                             <ul class="list-group list-group-flush">
                                 
                                 <li class="list-group-item">
-                                  
-                                      	
-                                     <table class="table table-striped table-hover table-bordere " style="margin-left: 15%;  width: 40%;">
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{showtime | date: 'yyyy-MM-dd  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                   
-                                    <div class="table-responsive col-sm-6" >
+                                     <div class="row">
+                                     <div class=" col-sm-6" > 	
                                      <table class="table table-striped table-hover table-bordered " >
                                         <tr>
                                             <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a></th>
@@ -560,6 +540,27 @@
                                         </tr>
                                     </table>
                                     </div>
+                                    <div class=" col-sm-6" >
+                                     <table class="table table-striped table-hover table-bordered " >
+                                        <tr>
+                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a></th>
+                                        </tr>    
+                                          
+                                        <tr>
+                                            <th> Build # </th>
+                                            <td>{{showbuild}}</td>
+                                         </tr>
+                                         <tr>
+                                            <th> Date </th>
+                                            <td>{{showtime | date: 'yyyy-MM-dd  h:mm:ss a'}}</td>
+                                         </tr>
+                                         <tr>
+                                            <th> Status</th>
+                                            <td> {{showstatus}}</td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                    </div>     
                                 </li>
                                 <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" class="buttoninfo2" role=" button" target="_blank">YAIC-UPGRADE-END-TO-END</a></li>
                             </ul>
