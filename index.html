@@ -167,15 +167,21 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT </a>
-                                    <table class="table table-borderless">
+                                    <table class="table table-hover">
                                         <tr>
                                             <th> Build # </th>
-                                            <td>{{showbuild}}</td>
+                                            
                                             <th> Date </th>
-                                            <td>{{showtime | date: 'yyyy-MM-dd  h:mm:ss a'}}</td>
+                                            
                                             <th> Status</th>
-                                            <td> {{showstatus}}</td>
+                                            
                                         </tr>
+                                        <tr>
+                                            <td>{{showbuild}}</td>
+                                            <td>{{showtime | date: 'yyyy-MM-dd  h:mm:ss a'}}</td>
+                                            <td> {{showstatus}}</td>
+                                        </tr>   
+                                          
                                     </table>
                                 </li>
                                 <li class="list-group-item">{{showtime}}<br/>{{showbuild}}<br/>{{showstatus}}<a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
@@ -380,7 +386,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" class="buttoninfo2" role="button" target="_blank">YAIC-CHAOS-TESTS</a>
-                                     <table class="table  table-hover" style="width:25%"> 
+                                     <table class="table  table-hover" style="width:35%"> 
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{showbuild}}</td>
