@@ -29,7 +29,7 @@ console.log("started");
               headers: {"Content-Type": "application/json"}
            }
           $http(status).then(function(response2){
-            $scope.showstatus =new Date(response2.data);
+            $scope.showstatus =response2.data;
 	   
          
            },);
@@ -40,7 +40,7 @@ console.log("started");
               headers: {"Content-Type": "application/json"}
            }
           $http(build).then(function(response2){
-            $scope.showbuild =new Date(response2.data);
+            $scope.showbuild =response2.data;
 	    	  
         
          
