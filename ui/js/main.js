@@ -14,7 +14,10 @@ console.log("started");
               headers: {"Content-Type": "application/json"}
            }
           $http(timedate).then(function(response2){
-            $scope.showtime =response2.data;
+            $scope.showtime =new Date(response2.data);
+	    var actualDate = new Date(response2.data)	
+
+          $scope.timeda= actualDate.substring(0, 10) + " " + actualDate.substring(11,19) ;	  
         
          
            },);
