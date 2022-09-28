@@ -22,6 +22,30 @@ console.log("started");
          
            },);
 		
+	
+		var status = {
+              method: 'GET',
+             url: "./output/status.json",
+              headers: {"Content-Type": "application/json"}
+           }
+          $http(status).then(function(response2){
+            $scope.showstatus =new Date(response2.data);
+	   
+         
+           },);
+		
+		var build = {
+              method: 'GET',
+             url: "./output/build.json",
+              headers: {"Content-Type": "application/json"}
+           }
+          $http(build).then(function(response2){
+            $scope.showbuild =new Date(response2.data);
+	    	  
+        
+         
+           },);
+		
 		
 
  
