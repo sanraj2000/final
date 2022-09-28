@@ -6,7 +6,20 @@ console.log("started");
 
 	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
-
+		
+		
+		var timedate = {
+              method: 'GET',
+             url: "./output/date.json",
+              headers: {"Content-Type": "application/json"}
+           }
+          $http(timedate).then(function(response2){
+            $scope.showtime =response2.data;
+        
+         
+           },);
+		
+		
 
  
             // DEV
