@@ -161,362 +161,49 @@
         <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 25%;"> <button class="tablinks" onclick="connectorTabs2('AWSTEST')" style=" background: darkseagreen; width: 31%;" id="defaultOpen2">AWS </button> <button class="tablinks" onclick="connectorTabs2('AZURETEST')" style=" background: darkseagreen; width: 31%;">AZure </button> <button class="tablinks" onclick="connectorTabs2('NONFUNCTIONAL')" style=" background: darkseagreen; width: 38%;">NonFunctional </button> </div>
         
         <div id="AWSTEST" class="  wmiotabtype2 tabcontent">
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
-            <div class="row">
-                <div class="col-sm-6">
+                        
+                <div class="accordion" id="accordionExample1">    
                     <div class="card  bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">TRUNK</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    
-                                     <div class="row">
-                                     <div class=" col-sm-6" > 	
-                                     <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" target="_blank">YAIC-AWS-DEV-BVT </a></th>
-                                        </tr>    
+                        <div class="card-header" id="headingOne1">
+                            <h2 class="mb-0">
+                            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
+                            </h2>   
+                        </div> 
+                        <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne1" data-parent="#accordionExample1">  
+                            <div class="card-body">
+                                <h5 class="card-title">TRUNK</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" class="buttoninfo2" role="button" target="_blank" >YAIC-AWS-DEV-BVT </a>
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <th> Build # </th>
+                                            
+                                                <th> Date </th>
+                                            
+                                                <th> Status</th>
+                                            
+                                            </tr>
+                                            <tr>
+                                                <td>{{showbuild}}</td>
+                                                <td>{{showtime | date: 'yyyy-MM-dd  h:mm:ss a'}}</td>
+                                                 <td> {{showstatus}}</td>
+                                            </tr>   
                                           
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw1showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw1showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw1showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                    </div>
-                                    <div class=" col-sm-6" >
-                                     <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw2showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw2showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw2showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN </a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw3showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw3showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw3showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                </li>
-                                <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw4showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw4showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw4showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                </li>
+                                         </table>
+                                    </li>
+                                    <li class="list-group-item">{{showtime}}<br/>{{showbuild}}<br/>{{showstatus}}<a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></li>
+                                    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN</a></li>
+                                    <li class="list-group-item"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" class="buttoninfo2" role="button" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></li>
                                 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card bg-light ">
-                        <div class="card-body">
-                            <h5 class="card-title">SPRO</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">INT</button> </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card  bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">TRUNK</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" target="_blank">YAIC-AWS-INT-BVT</a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw12showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw12showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw12showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card bg-light ">
-                        <div class="card-body">
-                            <h5 class="card-title">SPRO</h5>
-                            <ul class="list-group list-group-flush">
-                               
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PREPROD</button> </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card  bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">TRUNK</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT/" target="_blank">YAIC-AWS-PREPROD-BVT</a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw5showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw5showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw5showstatus}}</td>
-                                        </tr>
-                                    </table>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card bg-light ">
-                        <div class="card-body">
-                            <h5 class="card-title">SPRO</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT-SPRO/" target="_blank">YAIC-AWS-PREPROD-BVT-SPRO</a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw9showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw9showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw9showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                    
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PROD</button> </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card  bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">TRUNK</h5>
-                            <ul class="list-group list-group-flush"> 
-                                <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PROD-BVT/" target="_blank">YAIC-AWS-PROD-BVT</a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw6showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw6showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw6showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card bg-light ">
-                        <div class="card-body">
-                            <h5 class="card-title">SPRO</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PROD-BVT-SPRO/" target="_blank">YAIC-AWS-PROD-BVT-SPRO </a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw10showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw10showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw10showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                 </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">STAGE</button> </div>
-              <div class="row">
-                <div class="col-sm-6">
-                    <div class="card  bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">TRUNK</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                     <div class="row">
-                                     <div class=" col-sm-6" > 	
-                                     <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" target="_blank">YAIC-AWS-STAGE-BVT </a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw7showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw7showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw7showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                    </div>
-                                    <div class=" col-sm-6" >
-                                     <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN </a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw8showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw8showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw8showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                    </div>
-                                </li>  
-                           </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card  bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">SPRO</h5>
-                            <ul class="list-group list-group-flush">
-                                   <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-SPLIT-RUN/" target="_blank">YAIC-AWS-SPRO-SPLIT-RUN </a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw11showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw11showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw11showstatus}}</td>
-                                        </tr>
-                                    </table>                               
-                            </ul>
-                        </div>
-                    </div>
-                </div>                        
-            </div>
+                
+                
+                 </div>    
+            
         </div>    
         <div id="AZURETEST" class="  wmiotabtype2 tabcontent">
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PRE PROD</button> </div>
