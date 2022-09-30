@@ -158,10 +158,17 @@
         <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 25%;"> <button class="tablinks" onclick="connectorTabs2('AWSTEST')" style=" background: darkseagreen; width: 31%;" id="defaultOpen2">AWS </button> <button class="tablinks" onclick="connectorTabs2('AZURETEST')" style=" background: darkseagreen; width: 31%;">AZure </button> <button class="tablinks" onclick="connectorTabs2('NONFUNCTIONAL')" style=" background: darkseagreen; width: 38%;">NonFunctional </button> </div>
         
         <div id="AWSTEST" class="  wmiotabtype2 tabcontent">
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
             <div class="row">
+            <div class="accordion" id="accordionExample1">    
                 <div class="col-sm-6">
+                    
                     <div class="card  bg-light">
+                        <div class="card-header" id="headingOne1">
+                            <h2 class="mb-0">
+                            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
+                            </h2>   
+                         </div> 
+                        <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne1" data-parent="#accordionExample1">  
                         <div class="card-body">
                             <h5 class="card-title">TRUNK</h5>
                             <ul class="list-group list-group-flush">
@@ -190,6 +197,7 @@
                                 
                             </ul>
                         </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -202,6 +210,7 @@
                         </div>
                     </div>
                 </div>
+            </div>    
             </div>
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">INT</button> </div>
             <div class="row">
