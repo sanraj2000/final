@@ -7,7 +7,9 @@ console.log("started");
 	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
 		
-		
+		$scope.color = {
+    'background-color': 'green'
+  };
 		$scope.chngcolor = function() {
     $scope.color = {'background-color': 'red'};
   };
