@@ -8,6 +8,11 @@ console.log("started");
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
 		
 		
+		$scope.chngcolor = function() {
+    $scope.color = {'background-color': 'red'};
+  };
+		
+		
 		var timedate = {
               method: 'GET',
              url: "./output/date.json",
