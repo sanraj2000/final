@@ -254,7 +254,7 @@ body {
 
 ul{list-style-type: none;margin: 5px auto;padding: 0;overflow: hidden;}
  a, a:active, a:focus {outline: 0;}
-.Mainbody{background-color: white;box-shadow: 0 0 10px grey;float: left;margin-top: 5px;padding:     10px;width:280px;}
+.Mainbody{background-color: white;box-shadow: 0 0 10px grey;float: left;margin-top: 5px;padding:     10px;width:100%;}
  Mainbody > ul > a{padding: 10px 0;text-decoration:none;color:#000;font-weight:bolder;font-size:20px;}
  li.accordion-content ul li {color: #3c3b37;padding: 5px 0;}
  li.accordion-content ul li:hover {background-color: #cdcdc8;color: #3c3b37;padding: 5px 0;}
