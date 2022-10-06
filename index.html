@@ -265,248 +265,61 @@
             
             
             
-            
-            <div id="accordion">
-  <h3>Section 1</h3>
-  <div>
-    <p>
-    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-    </p>
-  </div>
-  <h3>Section 2</h3>
-  <div>
-    <p>
-    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-    suscipit faucibus urna.
-    </p>
-  </div>
-  <h3>Section 3</h3>
-  <div>
-    <p>
-    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-    </p>
-    <ul>
-      <li>List item one</li>
-      <li>List item two</li>
-      <li>List item three</li>
+            <div class="Mainbody">
+    <ul class="accordion" ng-class="{active:accordion==1}">
+        <a href ng-click="accordion = 1">Section 1:Lorem Ipsum</a>
+        <li class="accordion-content" ng-show="accordion==1">
+            <ul>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+            </ul>
+        </li>
+        
     </ul>
-  </div>
-  <h3>Section 4</h3>
-  <div>
-    <p>
-    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-    mauris vel est.
-    </p>
-    <p>
-    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos.
-    </p>
-  </div>
+        
+    <ul class="accordion" ng-class="{active:accordion==2}">
+        <a href ng-click="accordion = 2">Section 2:Lorem Ipsum</a>
+        <li class="accordion-content" ng-show="accordion==2">
+            <ul>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+            </ul>
+        </li>
+    </ul>
+        
+    <ul class="accordion" ng-class="{active:accordion==3}">
+        <a href ng-click="accordion = 3">Section 3 :Lorem Ipsum</a>
+        <li class="accordion-content" ng-show="accordion==3">
+            <ul>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="accordion" ng-class="{active:accordion==3}">
+        <a href ng-click="accordion = 4">Section 4 :Lorem Ipsum</a>
+        <li class="accordion-content" ng-show="accordion==4">
+            <ul>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+            </ul>
+        </li>
+    </ul>
 </div>
-            <div class="ui styled accordion">
-  <div class="title active">
-    <i class="dropdown icon"></i>
-    Level 1
-  </div>
-  <div class="content active">
-    Welcome to level 1
-    <div class="accordion transition visible" style="display: block !important;">
-      <div class="title">
-          <i class="dropdown icon"></i>
-          Level 1A
-      </div>
-      <div class="content">
-        <p class="transition hidden">Level 1A Contents</p>
-        <div class="accordion transition hidden">
-          <div class="title">
-              <i class="dropdown icon"></i>
-              Level 1A-A
-          </div>
-          <div class="content">
-              Level 1A-A Contents
-          </div>
-          <div class="title">
-              <i class="dropdown icon"></i>
-              Level 1A-B
-          </div>
-          <div class="content">
-              Level 1A-B Contents
-          </div>
-        </div>
-      </div>
-      <div class="title active">
-          <i class="dropdown icon"></i>
-          Level 1B
-      </div>
-      <div class="content active">
-          Level 1B Contents
-      </div>
-      <div class="title">
-          <i class="dropdown icon"></i>
-          Level 1C
-      </div>
-      <div class="content">
-          Level 1C Contents
-      </div>
-    </div>
-  </div>
-  <div class="title">
-    <i class="dropdown icon"></i>
-    Level 2
-  </div>
-  <div class="content">
-    <p>Welcome to level 2</p>
-    <div class="accordion">
-      <div class="active title">
-        <i class="dropdown icon"></i>
-        Level 2A
-      </div>
-      <div class="active content">
-        <p>Level 2A Contents</p>
-        <div class="accordion">
-          <div class="title">
-              <i class="dropdown icon"></i>
-              Level 2A-A
-          </div>
-          <div class="content">
-              Level 2A-A Contents
-          </div>
-          <div class="title">
-              <i class="dropdown icon"></i>
-              Level 2A-B
-          </div>
-          <div class="content">
-              Level 2A-B Contents
-          </div>
-        </div>
-      </div>
-      <div class="title">
-          <i class="dropdown icon"></i>
-          Level 2B
-      </div>
-      <div class="content">
-          Level 2B Contents
-      </div>
-      <div class="title">
-          <i class="dropdown icon"></i>
-          Level 2C
-      </div>
-      <div class="content">
-          Level 2C Contents
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-    
-    
-    
-    <div class="ui styled accordion">
-  <div class="title active">
-    <i class="dropdown icon"></i>
-    Level 1
-  </div>
-  <div class="content active">
-    Welcome to level 1
-    <div class="accordion transition visible" style="display: block !important;">
-      <div class="title">
-          <i class="dropdown icon"></i>
-          Level 1A
-      </div>
-      <div class="content">
-        <p class="transition hidden">Level 1A Contents</p>
-        <div class="accordion transition hidden">
-          <div class="title">
-              <i class="dropdown icon"></i>
-              Level 1A-A
-          </div>
-          <div class="content">
-              Level 1A-A Contents
-          </div>
-          <div class="title">
-              <i class="dropdown icon"></i>
-              Level 1A-B
-          </div>
-          <div class="content">
-              Level 1A-B Contents
-          </div>
-        </div>
-      </div>
-      <div class="title active">
-          <i class="dropdown icon"></i>
-          Level 1B
-      </div>
-      <div class="content active">
-          Level 1B Contents
-      </div>
-      <div class="title">
-          <i class="dropdown icon"></i>
-          Level 1C
-      </div>
-      <div class="content">
-          Level 1C Contents
-      </div>
-    </div>
-  </div>
-  <div class="title">
-    <i class="dropdown icon"></i>
-    Level 2
-  </div>
-  <div class="content">
-    <p>Welcome to level 2</p>
-    <div class="accordion">
-      <div class="active title">
-        <i class="dropdown icon"></i>
-        Level 2A
-      </div>
-      <div class="active content">
-        <p>Level 2A Contents</p>
-        <div class="accordion">
-          <div class="title">
-              <i class="dropdown icon"></i>
-              Level 2A-A
-          </div>
-          <div class="content">
-              Level 2A-A Contents
-          </div>
-          <div class="title">
-              <i class="dropdown icon"></i>
-              Level 2A-B
-          </div>
-          <div class="content">
-              Level 2A-B Contents
-          </div>
-        </div>
-      </div>
-      <div class="title">
-          <i class="dropdown icon"></i>
-          Level 2B
-      </div>
-      <div class="content">
-          Level 2B Contents
-      </div>
-      <div class="title">
-          <i class="dropdown icon"></i>
-          Level 2C
-      </div>
-      <div class="content">
-          Level 2C Contents
-      </div>
-    </div>
-  </div>
-</div>
+            
+            
             
             
             
