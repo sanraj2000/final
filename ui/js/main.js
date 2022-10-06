@@ -3,7 +3,7 @@ console.log("started");
 //https://api.github.com/orgs/softwareag/repos"
 //search : /search/repositories  https://api.github.com/search/repositories?q=
 
-
+	angular.module('cetApp', ['ngAnimate', 'ui.bootstrap']);
 	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
 		
