@@ -176,80 +176,6 @@
             
             
             
-            
-<div class="sample" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-         <div class="accordion" ng-class="{active:accordion==101}">
-        <a href ng-click="accordion = 10">Section 1:Lorem Ipsum</a>
-        
-    </div>
-      </h2>
-    </div>
-
-   
-      <div class="card-body">
-           <li class="accordion-content" ng-show="accordion==101">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-       
-      </div>
-   
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" (click)="basicCollapse.toggle()" type="button" data-ng-click="accordion2 = !accordion2"  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" data-ng-show="accordion2" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        Two.Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-                
-                  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button"  [attr.aria-expanded]="!basicCollapse.collapsed" data-ng-click="accordion = !accordion" data-target="#collapseOne"  aria-controls="collapseOne"> Collapsible Group Item #4 
-        </button>
-      </h2>
-    </div>
-    <div id="collapseOne" data-ng-show="accordion" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body"> THREE.Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-                
-                
-                
-                
-                
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-ng-click="accordion3 = !accordion3"  data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
-        </button>
-      </h2>
-    </div>
-    <div id="collapseThree" data-ng-show="accordion3" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        Three.Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -261,233 +187,7 @@
         <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%; "  ng-click="accordion = 10"> DEV </div>
         <li class="accordion-content" ng-show="accordion==10">
             
-            
-            <div class="row">
-          <div class="col-sm-12">
-            <div class="card  bg-light">
-              <div class="card-body">
-                <h5 class="card-title">CHAOS-TESTS</h5>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <div class="row">
-                      <div class=" col-sm-3">
-                        <table class="table table-striped table-hover table-bordered ">
-                          <tr>
-                            <th colspan="2" class="text-center">
-                              <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th> Build # </th>
-                            <td>{{other1showbuild}}</td>
-                          </tr>
-                          <tr>
-                            <th> Date </th>
-                            <td>{{other1showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                          </tr>
-                          <tr>
-                            <th> Status</th>
-                            <td> {{other1showstatus}}</td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class=" col-sm-3">
-                        <table class="table table-striped table-hover table-bordered ">
-                          <tr>
-                            <th colspan="2" class="text-center">
-                              <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-PROVISION-TENANT-CA3s/" target="_blank">YAIC-PROVISION-TENANT-CA3s </a>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th> Build # </th>
-                            <td>{{other2showbuild}}</td>
-                          </tr>
-                          <tr>
-                            <th> Date </th>
-                            <td>{{other2showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                          </tr>
-                          <tr>
-                            <th> Status</th>
-                            <td> {{other2showstatus}}</td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class=" col-sm-3">
-                        <table class="table table-striped table-hover table-bordered ">
-                          <tr>
-                            <th colspan="2" class="text-center">
-                              <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" target="_blank">YAIC-UPGRADE-END-TO-END </a>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th> Build # </th>
-                            <td>{{other3showbuild}}</td>
-                          </tr>
-                          <tr>
-                            <th> Date </th>
-                            <td>{{other3showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                          </tr>
-                          <tr>
-                            <th> Status</th>
-                            <td> {{other3showstatus}}</td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class=" col-sm-3">
-                        <table class="table table-striped table-hover table-bordered ">
-                          <tr>
-                            <th colspan="2" class="text-center">
-                              <a href="https://vmapigwjenkins:8443/job/SOAK-TEST-SUITE/" target="_blank">SOAK-TEST-SUITE</a>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th> Build # </th>
-                            <td>{{other4showbuild}}</td>
-                          </tr>
-                          <tr>
-                            <th> Date </th>
-                            <td>{{other4showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                          </tr>
-                          <tr>
-                            <th> Status</th>
-                            <td> {{other4showstatus}}</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-            
-            
-            
-            
-            
-        </li>
-        
-    </div>
-        
-    <div class="accordion" ng-class="{active:accordion==12}">
-        <a href ng-click="accordion = 12">Section 2:Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==12">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </div>
-        
-    <div class="accordion" ng-class="{active:accordion==13}">
-        <a href ng-click="accordion = 13">Section 3 :Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==13">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </div>
-    <div class="accordion" ng-class="{active:accordion==14}">
-        <a href ng-click="accordion = 14">Section 4 :Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==14">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </div>
-</div>
-          
-
-
-            
-            
-            
-  
-            
-            
-            
-            
-            
-         
-            
-           
-             
-            
-            
-            
-            
-            <div class="Mainbody">
-    <ul class="accordion" ng-class="{active:accordion==1}">
-        <a href ng-click="accordion = 1">Section 1:Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==1">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-        
-    </ul>
-        
-    <ul class="accordion" ng-class="{active:accordion==2}">
-        <a href ng-click="accordion = 2">Section 2:Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==2">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </ul>
-        
-    <ul class="accordion" ng-class="{active:accordion==3}">
-        <a href ng-click="accordion = 3">Section 3 :Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==3">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </ul>
-    <ul class="accordion" ng-class="{active:accordion==3}">
-        <a href ng-click="accordion = 4">Section 4 :Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==4">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-            
-            
-            
-            
-            
-                
-            <div class="row">
+             <div class="row">
                 <div class="col-sm-6">
                     <div class="card  bg-light">
                         <div class="card-body">
@@ -593,9 +293,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">INT</button> </div>
-            <div class="row">
+
+           
+            
+            
+            
+            
+        </li>
+        
+    </div>
+    </div>
+              <div class="accordion" ng-class="{active:accordion==11}">   
+            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;" ng-click="accordion = 11">INT</button> </div>
+             <li class="accordion-content" ng-show="accordion==11">
+               <div class="row">
                 <div class="col-sm-6">
                     <div class="card  bg-light">
                         <div class="card-body">
@@ -635,7 +346,10 @@
                         </div>
                     </div>
                 </div>
+                   </li>
+                </div>
             </div>
+                 
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PREPROD</button> </div>
             <div class="row">
                 <div class="col-sm-6">
@@ -842,6 +556,7 @@
                     </div>
                 </div>                        
             </div>
+                </div>
         </div>    
         <div id="AZURETEST" class="  wmiotabtype2 tabcontent">
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PRE PROD</button> </div>
@@ -1145,7 +860,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div> 
             <!----------------CI/CD ACTIONS HANDLERS------------------->
     
     </div>
