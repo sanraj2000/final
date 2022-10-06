@@ -258,15 +258,114 @@
            
             <div class="Mainbody">
     <div class="accordion" ng-class="{active:accordion==10}">
-        <a href ng-click="accordion = 10">Section 1:Lorem Ipsum</a>
+        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%; "  ng-click="accordion = 10"> DEV </div>
         <li class="accordion-content" ng-show="accordion==10">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
+            
+            
+            <div class="row">
+          <div class="col-sm-12">
+            <div class="card  bg-light">
+              <div class="card-body">
+                <h5 class="card-title">CHAOS-TESTS</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class=" col-sm-3">
+                        <table class="table table-striped table-hover table-bordered ">
+                          <tr>
+                            <th colspan="2" class="text-center">
+                              <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-CHAOS-TESTS/" target="_blank">YAIC-CHAOS-TESTS </a>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th> Build # </th>
+                            <td>{{other1showbuild}}</td>
+                          </tr>
+                          <tr>
+                            <th> Date </th>
+                            <td>{{other1showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                          </tr>
+                          <tr>
+                            <th> Status</th>
+                            <td> {{other1showstatus}}</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class=" col-sm-3">
+                        <table class="table table-striped table-hover table-bordered ">
+                          <tr>
+                            <th colspan="2" class="text-center">
+                              <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-PROVISION-TENANT-CA3s/" target="_blank">YAIC-PROVISION-TENANT-CA3s </a>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th> Build # </th>
+                            <td>{{other2showbuild}}</td>
+                          </tr>
+                          <tr>
+                            <th> Date </th>
+                            <td>{{other2showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                          </tr>
+                          <tr>
+                            <th> Status</th>
+                            <td> {{other2showstatus}}</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class=" col-sm-3">
+                        <table class="table table-striped table-hover table-bordered ">
+                          <tr>
+                            <th colspan="2" class="text-center">
+                              <a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-UPGRADE-END-TO-END/" target="_blank">YAIC-UPGRADE-END-TO-END </a>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th> Build # </th>
+                            <td>{{other3showbuild}}</td>
+                          </tr>
+                          <tr>
+                            <th> Date </th>
+                            <td>{{other3showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                          </tr>
+                          <tr>
+                            <th> Status</th>
+                            <td> {{other3showstatus}}</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class=" col-sm-3">
+                        <table class="table table-striped table-hover table-bordered ">
+                          <tr>
+                            <th colspan="2" class="text-center">
+                              <a href="https://vmapigwjenkins:8443/job/SOAK-TEST-SUITE/" target="_blank">SOAK-TEST-SUITE</a>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th> Build # </th>
+                            <td>{{other4showbuild}}</td>
+                          </tr>
+                          <tr>
+                            <th> Date </th>
+                            <td>{{other4showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                          </tr>
+                          <tr>
+                            <th> Status</th>
+                            <td> {{other4showstatus}}</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+            
+            
+            
+            
         </li>
         
     </div>
