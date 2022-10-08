@@ -263,17 +263,23 @@ console.log("started");
 
 
     //tabs
-          function connectorTabs(tabName) {
+          function connectorTabs(evt,tabName) {
             var i;
             var x = document.getElementsByClassName("wmiotabtype");
             for (i = 0; i < x.length; i++) {
               x[i].style.display = "none";
             }
-            document.getElementById(tabName).style.display = "block";
+           // document.getElementById(tabName).style.display = "block";
 	     
              if(tabName === "TESTJOBS"){
               document.getElementById('defaultOpen2').click();
             }
+		   var tablinks = document.getElementsByClassName("t tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
           
            
           }
@@ -281,13 +287,19 @@ console.log("started");
           //  document.getElementById("defaultOpen").Click();
 
           //tabs Testjobs
-          function connectorTabs2(tabName) {
+          function connectorTabs2(evt,tabName) {
             var i;
             var x = document.getElementsByClassName("wmiotabtype2");
             for (i = 0; i < x.length; i++) {
               x[i].style.display = "none";
             }
+           // document.getElementById(tabName).style.display = "block";
+		   var tablinks = document.getElementsByClassName("t1 tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
             document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
            
           }
 
