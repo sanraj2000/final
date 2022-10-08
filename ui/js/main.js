@@ -6,9 +6,9 @@ console.log("started");
 	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
 
-	function ($scope) {
+	
         $scope.isCollapsed = false;
-    }
+    
  
             // DEV
             var reposinfo2 = {
