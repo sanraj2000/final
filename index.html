@@ -39,7 +39,7 @@
         <p id="demo"></p>
         <p id="demo1"></p>
     </div>
-    <div class="tab" style="margin-left: 5%; margin-right: 5%; margin-top: 20px;"> <button class=" t tablinks" data-toggle="button" onclick="connectorTabs('DEVTENANTS')" id="defaultOpen" style="background: darkseagreen; width: 8%;"> DEV </button> <button class="t tablinks" onclick="connectorTabs('STAGETENANTS') " style="background: darkseagreen; width: 8%;">STAGE</button> <button class="t tablinks" onclick="connectorTabs('INTTENANTS')" style="background: darkseagreen; width: 8%;">INT</button>  <button class=" t tablinks" onclick="connectorTabs('TESTJOBS')" style="background: darkturquoise;">TEST JOBS</button> </div> <!-- DEV TENANTS          -->
+    <div class="tab" style="margin-left: 5%; margin-right: 5%; margin-top: 20px;"> <button class=" t tablinks" data-toggle="button" onclick="connectorTabs(event,'DEVTENANTS')" id="defaultOpen" style="background: darkseagreen; width: 8%;"> DEV </button> <button class="t tablinks" onclick="connectorTabs(event,'STAGETENANTS') " style="background: darkseagreen; width: 8%;">STAGE</button> <button class="t tablinks" onclick="connectorTabs(event, 'INTTENANTS')" style="background: darkseagreen; width: 8%;">INT</button>  <button class=" t tablinks" onclick="connectorTabs(event, 'TESTJOBS')" style="background: darkturquoise;">TEST JOBS</button> </div> <!-- DEV TENANTS          -->
     <div id="DEVTENANTS" class="container-fluid wmiotabtype tabcontent">
         <div class="container-fluid row">
             <p class="lead"> # DEV TENANTS : {{ totalCount_cc2 }}</p>
@@ -167,7 +167,7 @@
     </div>
     <!----------------TEST JOBS-------------------->
     <div id="TESTJOBS" class="container-fluid wmiotabtype tabcontent">
-        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 25%;"> <button class="t1 tablinks" onclick="connectorTabs2('AWSTEST')" style=" width: 31%;" id="defaultOpen2">AWS </button> <button class="t1 tablinks" onclick="connectorTabs2('AZURETEST')" style="width: 31%;">AZure </button> <button class="t1 tablinks" onclick="connectorTabs2('NONFUNCTIONAL')" style=" width: 38%;">NonFunctional </button> </div>
+        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 25%;"> <button class="t1 tablinks" onclick="connectorTabs2(event, 'AWSTEST')" style=" width: 31%;" id="defaultOpen2">AWS </button> <button class="t1 tablinks" onclick="connectorTabs2(event, 'AZURETEST')" style="width: 31%;">AZure </button> <button class="t1 tablinks" onclick="connectorTabs2(event, 'NONFUNCTIONAL')" style=" width: 38%;">NonFunctional </button> </div>
         
         <div id="AWSTEST" class="  wmiotabtype2 tabcontent">
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
