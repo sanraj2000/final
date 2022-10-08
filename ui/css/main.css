@@ -70,7 +70,7 @@ body {
 
 /* Style the buttons inside the tab */
 .tab button {
-  background-color: inherit;
+  background-color: #8A8AFF;
   float: left;
   border: none;
   outline: groove;
