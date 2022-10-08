@@ -7,39 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>APIGW CLOUD</title> <!-- bootstrap 4 css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/png" href="./detailsShow/img/fav_sag_cloud.png"> <!-- google font -->
     <!-- custom css -->
     <link rel="stylesheet" href="./ui/css/main.css">
-    
-    
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
-    
-    
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- custom js -->
     <script src="./ui/js/main.js"></script>
     <script>
-      $( function() {
-    $( "#accordion" ).accordion();
-  } );
-       
+       let text = "How are you doing today?";
+       let t=  {{az1}}; 
+       const myArray = text.split(" ");
+       const myArray1 = text.split(" "); 
+       document.getElementById("demo").innerHTML = myArray[1];
+       document.getElementById("demo1").innerHTML = myArray1[1]; 
     </script>
 </head>
 
 <body ng-app="cetApp" ng-controller="cetCtrl" onload="document.getElementById('defaultOpen').click();">
     <div class="container-fluid  headerBlock col bg-info text-white">
-        <h1 class="display-5">APIGW CLOUD</h1>
-        <p class="lead"> List of Test Tenants & Test Jobs  details </p>
+        <h1 class="display-5">APIGW CLOUD {{test}}</h1>
+        <p class="lead"> List of Test Tenants & Test Jobs  details {{sum}}</p>
         <p id="demo"></p>
         <p id="demo1"></p>
     </div>
-    <div class="tab" style="margin-left: 5%; margin-right: 5%; margin-top: 20px;"> <button class=" t tablinks" data-toggle="button" onclick="connectorTabs(event,'DEVTENANTS')" id="defaultOpen" style="background: darkseagreen; width: 8%;"> DEV </button> <button class="t tablinks" onclick="connectorTabs(event,'STAGETENANTS') " style="background: darkseagreen; width: 8%;">STAGE</button> <button class="t tablinks" onclick="connectorTabs(event, 'INTTENANTS')" style="background: darkseagreen; width: 8%;">INT</button>  <button class=" t tablinks" onclick="connectorTabs(event, 'TESTJOBS')" style="background: darkturquoise;">TEST JOBS</button> </div> <!-- DEV TENANTS          -->
+    <div class="tab" style="margin-left: 5%; margin-right: 5%; margin-top: 20px;"> <button class="tablinks" onclick="connectorTabs('DEVTENANTS')" id="defaultOpen" style="background: darkseagreen; width: 8%;"> DEV </button> <button class="tablinks" onclick="connectorTabs('STAGETENANTS') " style="background: darkseagreen; width: 8%;">STAGE</button> <button class="tablinks" onclick="connectorTabs('INTTENANTS')" style="background: darkseagreen; width: 8%;">INT</button>  <button class="tablinks" onclick="connectorTabs('TESTJOBS')" style="background: darkturquoise;">TEST JOBS</button> <button class="tablinks" onclick="connectorTabs('BUILDJOBS')" style="background: darkturquoise;">BUILD JOBS</button>  </div> <!-- DEV TENANTS          -->
     <div id="DEVTENANTS" class="container-fluid wmiotabtype tabcontent">
         <div class="container-fluid row">
             <p class="lead"> # DEV TENANTS : {{ totalCount_cc2 }}</p>
@@ -78,21 +69,380 @@
         </table>
     </div>
     <!------------------------------------------------------------------------>
-    <div id="ACTION" class="container-fluid wmiotabtype tabcontent">
-        <div class="card text-center">
-            <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs">
-                    <li class="nav-item"> <a class="nav-link active" href="#">Active</a> </li>
-                    <li class="nav-item"> <a class="nav-link active" href="#">Link</a> </li>
-                    <li class="nav-item"> <a class="nav-link active" href="#">Disabled</a> </li>
-                </ul>
+    <div id="BUILDJOBS" class="container-fluid wmiotabtype tabcontent">
+         <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 45%;"> 
+        <button class="tablinks" onclick="connectorTabs3('TENONE')" style=" background: darkseagreen;" id="defaultOpen3">10.1 </button> 
+        <button class="tablinks" onclick="connectorTabs3('TENFIVE')" style=" background: darkseagreen;">10.5 </button> 
+        <button class="tablinks" onclick="connectorTabs3('TENSEVEN')" style=" background: darkseagreen;">10.7 </button> 
+        <button class="tablinks" onclick="connectorTabs3('TENELVEN')" style=" background: darkseagreen; ">10.11 </button>
+        <button class="tablinks" onclick="connectorTabs3('TENTWELVE')" style=" background: darkseagreen; ">10.12 </button>
+        <button class="tablinks" onclick="connectorTabs3('TENFIFTEEN')" style=" background: darkseagreen;">10.15 </button>
+        <button class="tablinks" onclick="connectorTabs3('TRUNK')" style=" background: darkseagreen;">TRUNK </button> </div>
+    <div id="TENONE" class=" wmiotabtype3 tabcontent">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card  bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">FIX PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href=" https://daebuilds.eur.ad.sag/view/YAI%20%28API%20Gateway%29/job/YAI_github_101oct2017_FIX_publish/" target="_blank">YAI_github_101oct2017_FIX_publish</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{fix101build}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{fix101date | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{fix101status}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-sm-6">
+                <div class="card bg-light ">
+                    <div class="card-body">
+                        <h5 class="card-title">BAS PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                               
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div> <!-- STAGE TENANTS          -->
+    </div>
+    <div id="TENFIVE" class=" wmiotabtype3 tabcontent">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card  bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">FIX PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20%28API%20Gateway%29/job/YAI_github_105oct2019_FIX_publish/" target="_blank">YAI_github_105oct2019_FIX_publish</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{fix105build}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{fix105date | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{fix101status}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-light ">
+                    <div class="card-body">
+                        <h5 class="card-title">BAS PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="TENSEVEN" class=" wmiotabtype3 tabcontent">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card  bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">FIX PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20(API%20Gateway)/job/YAI_github_107oct2020_FIX_publish/" target="_blank">YAI_github_107oct2020_FIX_publish</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{fix107build}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{fix107date | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{fix107status}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-light ">
+                    <div class="card-body">
+                        <h5 class="card-title">BAS PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                               
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="TENELVEN" class=" wmiotabtype3 tabcontent">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card  bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">FIX PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20(API%20Gateway)/job/YAI_github_1011oct2021_FIX_publish/" target="_blank">YAI_github_1011oct2021_FIX_publish</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{fix1011build}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{fix1011date | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{fix1011status}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-light ">
+                    <div class="card-body">
+                        <h5 class="card-title">BAS PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20%28API%20Gateway%29/job/YAI_github_1011oct2021_BAS_publish" target="_blank">YAI_github_1011oct2021_BAS_publish</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{bfix1011build}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{bfix1011date | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{bfix1011status}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="TENTWELVE" class=" wmiotabtype3 tabcontent">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card  bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">FIX PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-light ">
+                    <div class="card-body">
+                        <h5 class="card-title">BAS PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20%28API%20Gateway%29/job/YAI_github_1012apr2022_BAS_publish/" target="_blank">YAI_github_1012apr2022_BAS_publish</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{bfix1012build}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{bfix1012date | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{bfix1012status}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="TENFIFTEEN" class=" wmiotabtype3 tabcontent">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card  bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">FIX PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20%28API%20Gateway%29/job/YAI_github_1015oct2022_FIX_publish/" target="_blank">YAI_github_1015oct2022_FIX_publish </a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{fix1015build}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{fix1015date | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{fix1015status}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-light ">
+                    <div class="card-body">
+                        <h5 class="card-title">BAS PUBLISH</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20%28API%20Gateway%29/job/YAI_github_1015oct2022_BAS_publish/" target="_blank">YAI_github_1015oct2022_BAS_publish/</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{bfix1015build}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{bfix1015date | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{bfix1015status}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="TRUNK" class=" wmiotabtype3 tabcontent">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card  bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">TRUNK</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20(API%20Gateway)/job/YAI_github_DEV_publish/" target="_blank">YAI_github_DEV_publish </a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{trunkbuild}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{trunkdate | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{trunkstatus}}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                             <li class="list-group-item">
+                                <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;">
+                                    <tr>
+                                        <th colspan="2" class="text-center"><a href="https://daebuilds.eur.ad.sag/view/YAI%20(API%20Gateway)/job/YAI_github_develop_BAS_continuous/" target="_blank">YAI_github_develop_BAS_continuous</a></th>
+                                    </tr>
+                                    <tr>
+                                        <th> Build # </th>
+                                        <td>{{trunkcbuild}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th>
+                                        <td>{{ trunkcdate | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status</th>
+                                        <td> {{trunkcstatus}</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-light ">
+                    <div class="card-body">
+                        <h5 class="card-title">SPRO</h5>
+                        <ul class="list-group list-group-flush">
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <!-- STAGE TENANTS          -->
     <div id="STAGETENANTS" class="container-fluid wmiotabtype tabcontent">
         <div class="container-fluid row">
             <p class="lead"> # STAGE TENANTS : {{ totalCount_cc }}</p>
@@ -167,28 +517,12 @@
     </div>
     <!----------------TEST JOBS-------------------->
     <div id="TESTJOBS" class="container-fluid wmiotabtype tabcontent">
-        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 25%;"> <button class="t1 tablinks" onclick="connectorTabs2(event, 'AWSTEST')" style=" width: 31%;" id="defaultOpen2">AWS </button> <button class="t1 tablinks" onclick="connectorTabs2(event, 'AZURETEST')" style="width: 31%;">AZure </button> <button class="t1 tablinks" onclick="connectorTabs2(event, 'NONFUNCTIONAL')" style=" width: 38%;">NonFunctional </button> </div>
+        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 25%;"> <button class="tablinks" onclick="connectorTabs2('AWSTEST')" style=" background: darkseagreen; width: 31%;" id="defaultOpen2">AWS </button> <button class="tablinks" onclick="connectorTabs2('AZURETEST')" style=" background: darkseagreen; width: 31%;">AZure </button> <button class="tablinks" onclick="connectorTabs2('NONFUNCTIONAL')" style=" background: darkseagreen; width: 38%;">NonFunctional </button> </div>
         
         <div id="AWSTEST" class="  wmiotabtype2 tabcontent">
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
-            
-          
-            
-            
-            
-
-
-
-
-
-           
-            <div class="Mainbody">
-    <div class="accordion" ng-class="{active:accordion==10}">
-        <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%; "  ng-click="accordion = 10"> DEV </div>
-        <div class="accordion-content" ng-show="accordion==10">
-            
-             <div class="row">
-                <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
                     <div class="card  bg-light">
                         <div class="card-body">
                             <h5 class="card-title">TRUNK</h5>
@@ -199,21 +533,33 @@
                                      <div class=" col-sm-6" > 	
                                      <table class="table table-striped table-hover table-bordered " >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" target="_blank">YAIC-AWS-DEV-BVT </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" target="_blank">YAIC-AWS-DEV-BVT </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{aw1showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ awtest1pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{aw1showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest1fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{aw1showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest1skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest1total}} </td>
+                                         </tr>   
                                     </table>
                                     </div>
                                     <div class=" col-sm-6" >
@@ -238,98 +584,122 @@
                                     </div>
                                 </li>
                                 <li class="list-group-item">
+                                    <div class="row">
+                                    <div class="col-sm-6">
                                     <table class="table table-striped table-hover table-bordered " >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{aw3showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ awtest3pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{aw3showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest3fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{aw3showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest3skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest3total}} </td>
+                                         </tr>   
                                     </table>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <table class="table table-striped table-hover table-bordered " >
+                                            <tr>
+                                                <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></th>
+                                            </tr>    
+                                              
+                                            <tr>
+                                                <th> Build # </th>
+                                                <td>{{aw4showbuild}}</td>
+                                                
+                                                <th> Passed </th>
+                                                <td> {{ awtest4pass }} </th>
+                                             </tr>
+                                             <tr>
+                                                <th> Date </th>
+                                                <td>{{aw4showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest4fail }} </th>
+                                             </tr>
+                                             <tr>
+                                                <th> Status</th>
+                                                <td> {{aw4showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest4skip}} </td>
+                                            </tr>
+                                            
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest4total}} </td>
+                                         </tr>      
+                                        </table>
+
+                                    </div>
+                                    </div>
                                 </li>
                                 <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw4showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw4showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw4showstatus}}</td>
-                                        </tr>
-                                    </table>
+                                   
                                 </li>
                                 
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="card bg-light ">
-                        <div class="card-body">
-                            <h5 class="card-title">SPRO</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-           
-            
-            
-            
-            
-        </div>
-        
-    </div>
-    </div>
-              <div class="accordion" ng-class="{active:accordion==11}">   
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;" ng-click="accordion = 11">INT</button> </div>
-             <div class="accordion-content" ng-show="accordion==11">
-               <div class="row">
+            </div>
+            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">INT</button> </div>
+            <div class="row">
                 <div class="col-sm-6">
                     <div class="card  bg-light">
                         <div class="card-body">
                             <h5 class="card-title">TRUNK</h5>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
+                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" target="_blank">YAIC-AWS-INT-BVT</a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/" target="_blank">YAIC-AWS-INT-BVT</a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{aw12showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ awtest12pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{aw12showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest12fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{aw12showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest12skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest12total}} </td>
+                                         </tr>   
                                     </table>
                                 </li>
                             </ul>
@@ -346,10 +716,7 @@
                         </div>
                     </div>
                 </div>
-                   </div>
-                </div>
             </div>
-                 
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PREPROD</button> </div>
             <div class="row">
                 <div class="col-sm-6">
@@ -358,23 +725,35 @@
                             <h5 class="card-title">TRUNK</h5>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
+                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT/" target="_blank">YAIC-AWS-PREPROD-BVT</a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT/" target="_blank">YAIC-AWS-PREPROD-BVT</a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{aw5showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ awtest5pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{aw5showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest5fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{aw5showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest5skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest5total}} </td>
+                                         </tr>   
                                     </table>
 
                                 </li>
@@ -388,23 +767,35 @@
                             <h5 class="card-title">SPRO</h5>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
+                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT-SPRO/" target="_blank">YAIC-AWS-PREPROD-BVT-SPRO</a></th>
+                                            <th colspan="4 class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT-SPRO/" target="_blank">YAIC-AWS-PREPROD-BVT-SPRO</a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{aw9showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ awtest9pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{aw9showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest9fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{aw9showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest9skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest9total}} </td>
+                                         </tr>   
                                     </table>
                                     
                                 </li>
@@ -483,46 +874,70 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                      <div class="row">
-                                     <div class=" col-sm-6" > 	
-                                     <table class="table table-striped table-hover table-bordered " >
+                                     	
+                                     <table class="table table-striped table-hover table-bordered "  style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" target="_blank">YAIC-AWS-STAGE-BVT </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT/" target="_blank">YAIC-AWS-STAGE-BVT </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{aw7showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ awtest7pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{aw7showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest7fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{aw7showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest7skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest1total}} </td>
+                                         </tr>   
                                     </table>
-                                    </div>
-                                    <div class=" col-sm-6" >
-                                     <table class="table table-striped table-hover table-bordered " >
+                                    </li>
+                                    <li class="list-group-item">
+                                     <table class="table table-striped table-hover table-bordered "  style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN </a></th>
+                                            <th colspan="4 class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{aw8showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ awtest8pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{aw8showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest8fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{aw8showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest8skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest8total}} </td>
+                                         </tr>   
                                     </table>
-                                    </div>
+                                    
                                 </li>  
                            </ul>
                         </div>
@@ -533,30 +948,41 @@
                         <div class="card-body">
                             <h5 class="card-title">SPRO</h5>
                             <ul class="list-group list-group-flush">
-                                   <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
+                                   <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-SPLIT-RUN/" target="_blank">YAIC-AWS-SPRO-SPLIT-RUN </a></th>
+                                            <th colspan="4 class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-SPLIT-RUN/" target="_blank">YAIC-AWS-SPRO-SPLIT-RUN </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{aw11showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ awtest11pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{aw11showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{awtest11fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{aw11showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{awtest11skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{awtest11total}} </td>
+                                         </tr>   
                                     </table>                               
                             </ul>
                         </div>
                     </div>
                 </div>                        
             </div>
-                </div>
         </div>    
         <div id="AZURETEST" class="  wmiotabtype2 tabcontent">
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PRE PROD</button> </div>
@@ -569,23 +995,35 @@
                                 <li class="list-group-item">
                                   
     	
-                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
+                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-PREPROD-BVT/" target="_blank">YAIC-AZURE-PREPROD-BVT </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-PREPROD-BVT/" target="_blank">YAIC-AZURE-PREPROD-BVT </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{az1showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ aztest1pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{az1showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{aztest1fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{az1showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{aztest1skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{aztest1total}} </td>
+                                         </tr>   
                                     </table>
                                 </li>
                                 
@@ -601,23 +1039,35 @@
                                 <li class="list-group-item">
                                   
     	
-                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
+                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-PREPROD-BVT-SPRO/" target="_blank">YAIC-AZURE-PREPROD-BVT-SPRO </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-PREPROD-BVT-SPRO/" target="_blank">YAIC-AZURE-PREPROD-BVT-SPRO </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{az2showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ aztest2pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{az2showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{aztest2fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{az2showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{aztest2skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{aztest2total}} </td>
+                                         </tr>   
                                     </table>
                                 </li>
                                 
@@ -702,23 +1152,35 @@
                                 <li class="list-group-item">
                                   
     	
-                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
+                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" target="_blank">YAIC-AZURE-STAGE-BVT </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-STAGE-BVT/" target="_blank">YAIC-AZURE-STAGE-BVT </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{az4showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ aztest4pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{az4showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{aztest4fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{az4showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{aztest4skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{aztest4total}} </td>
+                                         </tr>   
                                     </table>
                                 </li>
                                
@@ -734,23 +1196,35 @@
                                 <li class="list-group-item">
                                   
     	
-                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 25%;  width: 50%;" >
+                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-SPLIT-RUN/" target="_blank">YAIC-AZURE-SPRO-SPLIT-RUN </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AZURE-SPRO-SPLIT-RUN/" target="_blank">YAIC-AZURE-SPRO-SPLIT-RUN </a></th>
                                         </tr>    
                                           
                                         <tr>
                                             <th> Build # </th>
                                             <td>{{az5showbuild}}</td>
+                                            <th> Passed </th>
+                                            <td> {{ aztest5pass }} </th>
                                          </tr>
                                          <tr>
                                             <th> Date </th>
                                             <td>{{az5showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                             <th> Failed </th>
+                                             <td> {{aztest5fail }} </th>
                                          </tr>
                                          <tr>
                                             <th> Status</th>
                                             <td> {{az5showstatus}}</td>
+                                             <th> Skipped </th>
+                                             <td> {{aztest5skip}} </td>
                                         </tr>
+                                         <tr>
+                                             <th> Version </th>
+                                             <td> 10.15.0.1.0096</td>
+                                             <th> Total </th>
+                                             <td> {{aztest5total}} </td>
+                                         </tr>   
                                     </table>
                                 </li>
                               
@@ -860,7 +1334,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>    
             <!----------------CI/CD ACTIONS HANDLERS------------------->
     
     </div>
