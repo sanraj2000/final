@@ -2,7 +2,7 @@
 console.log("started");
 
 
-
+	angular.module('cetApp', ['ngAnimate', 'ui.bootstrap']);
 	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
 
