@@ -6,7 +6,7 @@ console.log("started");
 	var app = angular.module('cetApp', ['ui.bootstrap']);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
 
-	
+	 $scope.isCollapsed = false;
        
   $scope.oneAtATime = true;
 
