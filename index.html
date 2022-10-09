@@ -55,7 +55,20 @@
         <div ng-repeat="item in items">{{item}}</div>
     </accordion-group>
   </accordion>    
+  
     
+    
+    
+    <h2>Collapse</h2>
+
+    <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
+	<hr>
+	<div uib-collapse="isCollapsed">
+		<div class="well well-lg">Some content</div>
+	</div>
+
+
+    <pre><code>{{ isCollapsed }}</code></pre>
     
     
     
