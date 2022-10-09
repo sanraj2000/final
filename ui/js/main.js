@@ -3,31 +3,9 @@ console.log("started");
 
 
 	
-	var app = angular.module('cetApp', ['ui.bootstrap']);
+	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
-
-	 $scope.isCollapsed = false;
-       
-  $scope.oneAtATime = true;
-
-  $scope.groups = [
-    {
-      title: "Room1",
-      content: "Dynamic Group Body - 1"
-    },
-    {
-      title: "Room2",
-      content: "Dynamic Group Body - 2"
-    }
-  ];
-
-  $scope.items = ['Camera 1', 'Camera 2', 'Camera 3'];
-
-  $scope.addItem = function() {
-    var newItemNo = $scope.items.length + 1;
-    $scope.items.push('Camera ' + newItemNo);
-  };
-    
+ $scope.expand = false;
  
             // DEV
             var reposinfo2 = {
@@ -1452,6 +1430,22 @@ $http(aztest5).then(function(response2) {
 
   
 	});
+
+
+app.directive("toggleclass", function () {
+  return {
+    restrict: 'A',
+    scope: false,
+    link: function (scope, element, attrs) {
+      element.bind('click', function() {
+        scope.$apply(function() {
+          scope.expand = !scope.expand;
+        });
+      });
+    }
+  }
+});
+
 
 
           //pagination : Part 2
