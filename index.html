@@ -614,15 +614,27 @@
         <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 25%;"> <button class="t2 tablinks" onclick="connectorTabs2(event, 'AWSTEST')" style="  width: 31%;" id="defaultOpen2">AWS </button> <button class="t2 tablinks" onclick="connectorTabs2(event, 'AZURETEST')" style=" width: 31%;">AZure </button> <button class="t2 tablinks" onclick="connectorTabs2(event, 'NONFUNCTIONAL')" style=" width: 38%;">NonFunctional </button> </div>
         
         <div id="AWSTEST" class="  wmiotabtype2 tabcontent">
-            
-          <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
-    	    <hr>
-            <div uib-collapse="isCollapsed">
-    		    <div class="well well-lg">
-                  Some content
-                </div>
-    	    </div> 
-            
+<div class="tabv">
+  <button class="tv tablinks" onclick="connectorTabsv(event, 'London')">London</button>
+  <button class="tv tablinks" onclick="connectorTabsv(event, 'Paris')">Paris</button>
+  <button class="tv tablinks" onclick="connectorTabsv(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="tabcontentv">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontentv">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontentv">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+          
             
             
             
