@@ -10,117 +10,23 @@
     <link rel="icon" type="image/png" href="./detailsShow/img/fav_sag_cloud.png"> <!-- google font -->
     <!-- custom css -->
     <link rel="stylesheet" href="./ui/css/main.css">
-    <script type="application/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
-    <script type="application/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- custom js -->
     <script src="./ui/js/main.js"></script>
-    
+    <script>
+       let text = "How are you doing today?";
+       let t=  {{az1}}; 
+       const myArray = text.split(" ");
+       const myArray1 = text.split(" "); 
+       document.getElementById("demo").innerHTML = myArray[1];
+       document.getElementById("demo1").innerHTML = myArray1[1]; 
+    </script>
 </head>
 
 <body ng-app="cetApp" ng-controller="cetCtrl" onload="document.getElementById('defaultOpen').click();">
-    
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible Group Item #1
-        </button>
-      </h2>
-    </div>
-
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        Some placeholder content for the second accordion panel. This panel is hidden by default.
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
-        </button>
-      </h2>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-   
-   
-    
-    
-
-        
-    <div class="accordion" ng-class="{active:accordion==12}">
-        <a href ng-click="accordion = 12">Section 2:Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==12">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </div>
-        
-    <div class="accordion" ng-class="{active:accordion==13}">
-        <a href ng-click="accordion = 13">Section 3 :Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==13">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </div>
-    <div class="accordion" ng-class="{active:accordion==14}">
-        <a href ng-click="accordion = 14">Section 4 :Lorem Ipsum</a>
-        <li class="accordion-content" ng-show="accordion==14">
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-                <li>Lorem Ipsum</li>
-            </ul>
-        </li>
-    </div>
-</div>    
-    
-    
-    
-    
-    
-    
-    
     <div class="container-fluid  headerBlock col bg-info text-white">
-        <h1 class="display-5">APIGW CLOUD {{test}}</h1>
-        <p class="lead"> List of Test Tenants & Test Jobs  details {{sum}}</p>
+        <h1 class="display-5">SMART GEEK </h1>
+        <p class="lead"> Hello Nerds!!! This  Geek is for You!!!!</p>
         <p id="demo"></p>
         <p id="demo1"></p>
     </div>
@@ -614,14 +520,8 @@
         <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 25%;"> <button class="t2 tablinks" onclick="connectorTabs2(event, 'AWSTEST')" style="  width: 31%;" id="defaultOpen2">AWS </button> <button class="t2 tablinks" onclick="connectorTabs2(event, 'AZURETEST')" style=" width: 31%;">AZure </button> <button class="t2 tablinks" onclick="connectorTabs2(event, 'NONFUNCTIONAL')" style=" width: 38%;">NonFunctional </button> </div>
         
         <div id="AWSTEST" class="  wmiotabtype2 tabcontent">
-<div class="tabv">
-  <button class="tv tablinks" onclick="connectorTabsv(event, 'London')">London</button>
-  <button class="tv tablinks" onclick="connectorTabsv(event, 'Paris')">Paris</button>
-  <button class="tv tablinks" onclick="connectorTabsv(event, 'Tokyo')">Tokyo</button>
-</div>
-
-<div id="London" class="tabcontentv">
-  <div class="row">
+            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
+            <div class="row">
                 <div class="col-sm-12">
                     <div class="card  bg-light">
                         <div class="card-body">
@@ -656,7 +556,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td> </td>
                                              <th> Total </th>
                                              <td> {{awtest1total}} </td>
                                          </tr>   
@@ -711,7 +611,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td> </td>
                                              <th> Total </th>
                                              <td> {{awtest3total}} </td>
                                          </tr>   
@@ -745,7 +645,7 @@
                                             
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td> </td>
                                              <th> Total </th>
                                              <td> {{awtest4total}} </td>
                                          </tr>      
@@ -762,11 +662,9 @@
                         </div>
                     </div>
                 </div>
-            </div> 
-</div>
-
-<div id="Paris" class="tabcontentv">
- <div class="row">
+            </div>
+            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">INT</button> </div>
+            <div class="row">
                 <div class="col-sm-6">
                     <div class="card  bg-light">
                         <div class="card-body">
@@ -798,7 +696,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td> </td>
                                              <th> Total </th>
                                              <td> {{awtest12total}} </td>
                                          </tr>   
@@ -819,10 +717,8 @@
                     </div>
                 </div>
             </div>
-</div>
-
-<div id="Tokyo" class="tabcontentv">
-<div class="row">
+            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PREPROD</button> </div>
+            <div class="row">
                 <div class="col-sm-6">
                     <div class="card  bg-light">
                         <div class="card-body">
@@ -854,7 +750,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td></td>
                                              <th> Total </th>
                                              <td> {{awtest5total}} </td>
                                          </tr>   
@@ -873,7 +769,7 @@
                                 <li class="list-group-item">
                                     <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="4 class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT-SPRO/" target="_blank">YAIC-AWS-PREPROD-BVT-SPRO</a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT-SPRO/" target="_blank">YAIC-AWS-PREPROD-BVT-SPRO</a></th>
                                         </tr>    
                                           
                                         <tr>
@@ -896,7 +792,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td></td>
                                              <th> Total </th>
                                              <td> {{awtest9total}} </td>
                                          </tr>   
@@ -969,19 +865,6 @@
                     </div>
                 </div>
             </div>
-</div>
-          
-            
-            
-            
-            
-            
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">DEV</button> </div>
-           
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">INT</button> </div>
-            
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PREPROD</button> </div>
-            
             <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">STAGE</button> </div>
               <div class="row">
                 <div class="col-sm-6">
@@ -1017,7 +900,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td> </td>
                                              <th> Total </th>
                                              <td> {{awtest1total}} </td>
                                          </tr>   
@@ -1026,7 +909,7 @@
                                     <li class="list-group-item">
                                      <table class="table table-striped table-hover table-bordered "  style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="4 class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-STAGE-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-STAGE-BVT-SPLIT-RUN </a></th>
                                         </tr>    
                                           
                                         <tr>
@@ -1049,7 +932,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td> </td>
                                              <th> Total </th>
                                              <td> {{awtest8total}} </td>
                                          </tr>   
@@ -1067,7 +950,7 @@
                             <ul class="list-group list-group-flush">
                                    <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
                                         <tr>
-                                            <th colspan="4 class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-SPLIT-RUN/" target="_blank">YAIC-AWS-SPRO-SPLIT-RUN </a></th>
+                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-SPRO-SPLIT-RUN/" target="_blank">YAIC-AWS-SPRO-SPLIT-RUN </a></th>
                                         </tr>    
                                           
                                         <tr>
@@ -1090,7 +973,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td></td>
                                              <th> Total </th>
                                              <td> {{awtest11total}} </td>
                                          </tr>   
@@ -1137,7 +1020,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td></td>
                                              <th> Total </th>
                                              <td> {{aztest1total}} </td>
                                          </tr>   
@@ -1181,7 +1064,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td> </td>
                                              <th> Total </th>
                                              <td> {{aztest2total}} </td>
                                          </tr>   
@@ -1294,7 +1177,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td> </td>
                                              <th> Total </th>
                                              <td> {{aztest4total}} </td>
                                          </tr>   
@@ -1338,7 +1221,7 @@
                                         </tr>
                                          <tr>
                                              <th> Version </th>
-                                             <td> 10.15.0.1.0096</td>
+                                             <td></td>
                                              <th> Total </th>
                                              <td> {{aztest5total}} </td>
                                          </tr>   
