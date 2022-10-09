@@ -1445,9 +1445,6 @@ app.directive("toggleclass", function () {
     }
   }
 });
-
-
-
 app.directive("toggleclass1", function () {
   return {
     restrict: 'A',
@@ -1456,6 +1453,45 @@ app.directive("toggleclass1", function () {
       element.bind('click', function() {
         scope.$apply(function() {
           scope.expand1 = !scope.expand1;
+        });
+      });
+    }
+  }
+});
+app.directive("toggleclass2", function () {
+  return {
+    restrict: 'A',
+    scope: false,
+    link: function (scope, element, attrs) {
+      element.bind('click', function() {
+        scope.$apply(function() {
+          scope.expand2 = !scope.expand2;
+        });
+      });
+    }
+  }
+});
+app.directive("toggleclass3", function () {
+  return {
+    restrict: 'A',
+    scope: false,
+    link: function (scope, element, attrs) {
+      element.bind('click', function() {
+        scope.$apply(function() {
+          scope.expand3 = !scope.expand3;
+        });
+      });
+    }
+  }
+});
+app.directive("toggleclass4", function () {
+  return {
+    restrict: 'A',
+    scope: false,
+    link: function (scope, element, attrs) {
+      element.bind('click', function() {
+        scope.$apply(function() {
+          scope.expand4 = !scope.expand4;
         });
       });
     }
