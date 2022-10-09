@@ -7,7 +7,26 @@ console.log("started");
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
 
 	
-        $scope.isCollapsed = false;
+       
+  $scope.oneAtATime = true;
+
+  $scope.groups = [
+    {
+      title: "Room1",
+      content: "Dynamic Group Body - 1"
+    },
+    {
+      title: "Room2",
+      content: "Dynamic Group Body - 2"
+    }
+  ];
+
+  $scope.items = ['Camera 1', 'Camera 2', 'Camera 3'];
+
+  $scope.addItem = function() {
+    var newItemNo = $scope.items.length + 1;
+    $scope.items.push('Camera ' + newItemNo);
+  };
     
  
             // DEV
