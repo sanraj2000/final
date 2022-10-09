@@ -3,7 +3,7 @@ console.log("started");
 
 
 	
-	var app = angular.module('cetApp', [ui.bootstrap]);
+	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
 
 	
