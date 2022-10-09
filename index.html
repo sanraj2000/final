@@ -31,11 +31,6 @@
         <p id="demo1"></p>
     </div>
     
-    
-<h2 class="panel-title" ng-class="{'active': expand}" toggleclass>My Tandem URL</h2>
-<a class="collapse-arrow" ng-hide="expand">Collapse</a>
-<a class="collapse-arrow" ng-show="expand">Expand</a>
-    
   
     
     
@@ -733,7 +728,8 @@
                 </div>
                 <div class="collapse-arrow" ng-hide="expand1"></div>
             </div>
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PREPROD</button> </div>
+            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;"  ng-class="{'active2': expand2}" toggleclass2>PREPROD</button> </div>
+            <div class="collapse-arrow" ng-show="expand2">          
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card  bg-light">
@@ -819,8 +815,11 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="collapse-arrow" ng-hide="expand2"></div>
             </div>
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">PROD</button> </div>
+            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;" ng-class="{'active3': expand3}" toggleclass3>PROD</button> </div>
+            <div class="collapse-arrow" ng-show="expand3">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="card  bg-light">
@@ -880,8 +879,11 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="collapse-arrow" ng-hide="expand3"></div>
             </div>
-            <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 200px;"> <button class="tablinks" style="background: darkturquoise; width: 100%;">STAGE</button> </div>
+            <button class="tablinks" style="background: darkturquoise; width: 100%;" ng-class="{'active4': expand4}" toggleclass4>STAGE</button>
+              <div class="collapse-arrow" ng-show="expand4">
               <div class="row">
                 <div class="col-sm-6">
                     <div class="card  bg-light">
@@ -997,7 +999,9 @@
                             </ul>
                         </div>
                     </div>
-                </div>                        
+                </div> 
+                </div>
+                <div class="collapse-arrow" ng-hide="expand4"></div>
             </div>
         </div>    
         <div id="AZURETEST" class="  wmiotabtype2 tabcontent">
