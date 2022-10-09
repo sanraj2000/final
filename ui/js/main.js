@@ -1448,6 +1448,22 @@ app.directive("toggleclass", function () {
 
 
 
+app.directive("toggleclass1", function () {
+  return {
+    restrict: 'A',
+    scope: false,
+    link: function (scope, element, attrs) {
+      element.bind('click', function() {
+        scope.$apply(function() {
+          scope.expand1 = !scope.expand1;
+        });
+      });
+    }
+  }
+});
+
+
+
           //pagination : Part 2
           //We already have a limitTo filter built-in to angular,
           //let's make a startFrom filter
