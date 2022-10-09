@@ -20,14 +20,7 @@
     
     
     
-    <script>
-       let text = "How are you doing today?";
-       let t=  {{az1}}; 
-       const myArray = text.split(" ");
-       const myArray1 = text.split(" "); 
-       document.getElementById("demo").innerHTML = myArray[1];
-       document.getElementById("demo1").innerHTML = myArray1[1]; 
-    </script>
+  
 </head>
 
 <body ng-app="cetApp" ng-controller="cetCtrl" onload="document.getElementById('defaultOpen').click();">
@@ -40,37 +33,36 @@
     
     
     
-<label class="checkbox">
-    <input type="checkbox" ng-model="oneAtATime">
-    Open only one at a time
-  </label>
-
-  <accordion close-others="oneAtATime">
-    <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-      {{group.content}}
-    </accordion-group>
-    <accordion-group heading="Dynamic Body Content">
-      <p>The body of the accordion group grows to fit the contents</p>
-          <button class="btn btn-small" ng-click="addItem()">Add Item</button>
-        <div ng-repeat="item in items">{{item}}</div>
-    </accordion-group>
-  </accordion>    
+ <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <i data-toggle="collapse" href="#70291516059420">
+          Collapsible Group Item #1
+        </i>
+      </h4>
+    </div>
+    <div id="70291516059420" class="panel-collapse collapse">
+      {{collapse}}
+      <div class="panel-body">Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
   
-    
-    
-    
-    <h2>Collapse</h2>
-
-    <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
-	<hr>
-	<div uib-collapse="isCollapsed">
-		<p> i am inside</p>
-	</div>
-
-
-    <pre><code>{{ isCollapsed }}</code></pre>
-    
-	
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne1" ng-click="70291611403200 = !70291611403200">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne1" class="panel-collapse collapse in">
+      <div class="panel-body">Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  
+  <pre><code>{{ id70291611403200 }}</code></pre>
 	
 	 <h2>Simple Collapsible</h2>
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
