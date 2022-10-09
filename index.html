@@ -531,7 +531,7 @@
         
 
         
-    <div class="accordion" ng-class="{active:accordion==12}">
+    <div class="accordion" ng-class="{active:accordion==12}" toggleclass>
         <div class="tab" style=" margin-right: 100px; margin-top: 20px; width: 150px;">
         <button class="tablinks" style="background: darkturquoise; width: 100%;" ng-click="accordion = 12">DEV</button>
         </div>   
@@ -547,6 +547,12 @@
         <div class="accordion-content" ng-hide="accordion==12">
         </div>
     </div>
+        
+        <h2 class="panel-title" ng-class="{'active': expand}" toggleclass>My Tandem URL</h2>
+<div class="collapse-arrow" ng-hide="expand">Collapse</div>
+<div class="collapse-arrow" ng-show="expand">Expand</div>
+        
+        
         
     <div class="accordion" ng-class="{active:accordion==13}">
         <a href ng-click="accordion = 13">Section 3 :Lorem Ipsum</a>
