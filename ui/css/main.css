@@ -2,6 +2,12 @@ body {
   font: 300 14px/1.2 'Public Sans', sans-serif;
 }
 
+.active {
+    color: red;
+}
+
+
+
 .container-fluid {
   max-width: 90%;
 }
