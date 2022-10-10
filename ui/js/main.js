@@ -6,6 +6,26 @@ console.log("started");
 	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
  $scope.expand = false;
+var test1 = {
+    method: 'GET',
+    url: "./output/webscrap.txt",
+   }
+$http(test1).then(function(response2) {
+    $scope.aw = response2.data;
+    var t =  $scope.aw	
+    if(t){
+    const myArray = t.split(" ");
+    $scope.test1total = myArray[0];
+    $scope.test1fail = myArray[3];
+    $scope.test1skip = myArray[5];
+    $scope.test1pass = Number(myArray[0])-Number(myArray[3])-Number(myArray[5]);}
+    else if{
+	$scope.test1total = "N/A";
+    $scope.test1fail = "N/A";
+    $scope.test1skip = "N/A";
+    $scope.test1pass = "N/A";   
+    }
+}, );			
  
             // DEV
             var reposinfo2 = {
