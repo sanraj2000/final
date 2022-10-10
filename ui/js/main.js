@@ -12,13 +12,14 @@ var test1 = {
    }
 $http(test1).then(function(response2) {
     $scope.aw = response2.data;
-    var t =  $scope.aw	
+    var t =  $scope.aw
+    var a = "N/A"
     if(string(t) == null){
 	    $scope.check = "testing";
-	    $scope.test1total = 'N/A';
+	    $scope.test1total = a;
     $scope.test1fail = "N/A";
     $scope.test1skip = "N/A";
-    $scope.test1pass = "N/A"; 
+    $scope.test1pass = a; 
    }
     else {
 	 const myArray = t.split(" ");
