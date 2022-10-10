@@ -8,7 +8,8 @@ console.log("started");
  $scope.expand = false;
 var test1 = {
     method: 'GET',
-    url: "https://github.softwareag.com/AIM/apigw-cloud/blob/e9c99033f6b1b556b670d035c0efe0c5e1234f66/output/webjson/testno/awsdevbvt.txt",
+   // url: "https://github.softwareag.com/AIM/apigw-cloud/blob/e9c99033f6b1b556b670d035c0efe0c5e1234f66/output/webjson/testno/awsdevbvt.txt",
+    url :"https://github.softwareag.com/AIM/apigw-cloud/blob/dea557a1a3d136694069885fc8564e8447f349c6/output/webjson/testno/awsdevbvt.txt";	
    }
 $http(test1).then(function(response2) {
     $scope.aw = response2.data;
