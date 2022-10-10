@@ -16,7 +16,7 @@ $http(test1).then(function(response2) {
     var a = "N/A"
     if(string(t) == null){
 	    $scope.check = "testing";
-	    $scope.test1total = a;
+	    $scope.test1total = "Not";
     $scope.test1fail = "N/A";
     $scope.test1skip = "N/A";
     $scope.test1pass = a; 
