@@ -19,7 +19,7 @@ $http(test1).then(function(response2) {
     var a = "N/A"
     if(t){
 	   const myArray = t.split(" ");
-	    if(myArray[0].length !== 0){
+	    if(myArray[0].trim().length !== 0){
     $scope.test1total = myArray[0];
     $scope.test1fail = myArray[3];
    // $scope.test1skip = myArray[5];
