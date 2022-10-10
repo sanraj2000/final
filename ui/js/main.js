@@ -35,7 +35,7 @@ $http(test1).then(function(response2) {
             // DEV
             var reposinfo2 = {
               method: 'GET',
-             url: "./output/dev.json",
+             url: "https://github.softwareag.com/AIM/apigw-cloud/blob/dea557a1a3d136694069885fc8564e8447f349c6/output/dev.json",
               headers: {"Content-Type": "application/json"}
            }
           $http(reposinfo2).then(function(response2){
