@@ -25,7 +25,8 @@ $http(test1).then(function(response2) {
 	 const myArray = t.split(" ");
     $scope.test1total = myArray[0];
     $scope.test1fail = myArray[3];
-    $scope.test1skip = myArray[5];
+   // $scope.test1skip = myArray[5];
+	    $scope.test1skip = "Hello";
     $scope.test1pass = Number(myArray[0])-Number(myArray[3])-Number(myArray[5]);      
     }
 }, );			
