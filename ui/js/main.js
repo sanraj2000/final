@@ -13,7 +13,8 @@ var test1 = {
 $http(test1).then(function(response2) {
     $scope.aw = response2.data;
     var t =  $scope.aw	
-    if(t == null){
+    if(t === null){
+	    $scope.check = "testing";
 	    $scope.test1total = "N/A";
     $scope.test1fail = "N/A";
     $scope.test1skip = "N/A";
