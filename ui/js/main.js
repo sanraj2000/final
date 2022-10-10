@@ -6,32 +6,7 @@ console.log("started");
 	var app = angular.module('cetApp', []);
 	app.controller('cetCtrl', function($scope,$http,$window, $location, $anchorScroll, $timeout,$filter) {
  $scope.expand = false;
-var test1 = {
-    method: 'GET',
-	url: "./output/webscrap.txt"
-   // url: "https://github.softwareag.com/AIM/apigw-cloud/blob/e9c99033f6b1b556b670d035c0efe0c5e1234f66/output/webjson/testno/awsdevbvt.txt",
-   // url :"https://github.softwareag.com/AIM/apigw-cloud/blob/dea557a1a3d136694069885fc8564e8447f349c6/output/webjson/testno/awsdevbvt.txt";	
-   }
-$http(test1).then(function(response2) {
-    $scope.aw = response2.data;
-    var t =  $scope.aw
-    var a = "N/A"
-    if(t == ""){
-	    $scope.check = "testing";
-	    $scope.test1total = "Not";
-    $scope.test1fail = "N/A";
-    $scope.test1skip = "N/A";
-    $scope.test1pass = a; 
-   }
-    else {
-	 const myArray = t.split(" ");
-    $scope.test1total = myArray[0];
-    $scope.test1fail = myArray[3];
-   // $scope.test1skip = myArray[5];
-	    $scope.test1skip = "Hello";
-    $scope.test1pass = Number(myArray[0])-Number(myArray[3])-Number(myArray[5]);      
-    }
-}, );			
+			
  
             // DEV
             var reposinfo2 = {
