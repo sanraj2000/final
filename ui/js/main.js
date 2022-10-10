@@ -1636,5 +1636,6 @@ app.directive("toggleclass4", function () {
  	    }
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
+		  document.getElementById("defaultOpenv").click();
 		   
           }
