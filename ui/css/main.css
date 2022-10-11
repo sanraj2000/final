@@ -240,13 +240,14 @@ body {
   display: block;
   background-color: #B0C4DE;
   color: black;
+  float: left;
   padding: 22px 16px;
   width: 100%;
   border: none;
   outline: groove;
-  text-align: left;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 17px;
 }
 
 /* Change background color of buttons on hover */
