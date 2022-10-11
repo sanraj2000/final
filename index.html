@@ -546,6 +546,80 @@
 
 <div id="DEV" class="tabcontentv">
     <h1> dev</h1>
+    
+</div>
+
+<div id="INT" class="tabcontentv">
+    <h1> int</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title">TRUNK</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <table
+              class="table table-striped table-hover table-bordered"
+              style="margin-left: 5%;  width: 90%;"
+            >
+              <tr>
+                <th colspan="4" class="text-center">
+                  <a
+                    href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/"
+                    target="_blank"
+                    >YAIC-AWS-INT-BVT</a
+                  >
+                </th>
+              </tr>
+
+              <tr>
+                <th>Build #</th>
+                <td>{{aw12showbuild}}</td>
+                <th>Passed</th>
+                <td>{{ awtest12pass }}</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td>{{aw12showtime | date: 'dd-MM-yyyy h:mm:ss a'}}</td>
+                <th>Failed</th>
+                <td>{{awtest12fail }}</td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>{{aw12showstatus}}</td>
+                <th>Skipped</th>
+                <td>{{awtest12skip}}</td>
+              </tr>
+              <tr>
+                <th>Version</th>
+                <td></td>
+                <th>Total</th>
+                <td>{{awtest12total}}</td>
+              </tr>
+            </table>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title">SPRO</h5>
+        <ul class="list-group list-group-flush"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    
+    
+    
+</div>
+
+<div id="PREPROD" class="tabcontentv">
+    <h1>preprod</h1>
     <div class="row">
     <div class="col-sm-6">
         <div class="card  bg-light">
@@ -632,79 +706,6 @@
         </div>
     </div>
 </div>  
-</div>
-
-<div id="INT" class="tabcontentv">
-    <h1> int</h1>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card bg-light">
-      <div class="card-body">
-        <h5 class="card-title">TRUNK</h5>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <table
-              class="table table-striped table-hover table-bordered"
-              style="margin-left: 5%;  width: 90%;"
-            >
-              <tr>
-                <th colspan="4" class="text-center">
-                  <a
-                    href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-INT-BVT/"
-                    target="_blank"
-                    >YAIC-AWS-INT-BVT</a
-                  >
-                </th>
-              </tr>
-
-              <tr>
-                <th>Build #</th>
-                <td>{{aw12showbuild}}</td>
-                <th>Passed</th>
-                <td>{{ awtest12pass }}</td>
-              </tr>
-              <tr>
-                <th>Date</th>
-                <td>{{aw12showtime | date: 'dd-MM-yyyy h:mm:ss a'}}</td>
-                <th>Failed</th>
-                <td>{{awtest12fail }}</td>
-              </tr>
-              <tr>
-                <th>Status</th>
-                <td>{{aw12showstatus}}</td>
-                <th>Skipped</th>
-                <td>{{awtest12skip}}</td>
-              </tr>
-              <tr>
-                <th>Version</th>
-                <td></td>
-                <th>Total</th>
-                <td>{{awtest12total}}</td>
-              </tr>
-            </table>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card bg-light">
-      <div class="card-body">
-        <h5 class="card-title">SPRO</h5>
-        <ul class="list-group list-group-flush"></ul>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-    
-    
-    
-</div>
-
-<div id="PREPROD" class="tabcontentv">
-    <h1>preprod</h1>
 </div>            
             
             
