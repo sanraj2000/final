@@ -547,148 +547,162 @@
 <div id="DEV" class="tabcontentv">
     <h1> dev</h1>
    <div class="row">
-                <div class="col-sm-12">
-                    <div class="card  bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">TRUNK</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    
-                                     <div class="row">
-                                     <div class=" col-sm-6" > 	
-                                     <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/" target="_blank">YAIC-AWS-DEV-BVT </a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw1showbuild}}</td>
-                                            <th> Passed </th>
-                                            <td> {{ awtest1pass }} </th>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw1showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                             <th> Failed </th>
-                                             <td> {{awtest1fail }} </th>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw1showstatus}}</td>
-                                             <th> Skipped </th>
-                                             <td> {{awtest1skip}} </td>
-                                        </tr>
-                                         <tr>
-                                             <th> Version </th>
-                                             <td> </td>
-                                             <th> Total </th>
-                                             <td> {{awtest1total}} </td>
-                                         </tr>   
-                                    </table>
-                                    </div>
-                                    <div class=" col-sm-6" >
-                                     <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="2" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/" target="_blank">YAIC-AWS-DEV-BVT-PARALLEL</a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw2showbuild}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw2showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw2showstatus}}</td>
-                                        </tr>
-                                    </table>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row">
-                                    <div class="col-sm-6">
-                                    <table class="table table-striped table-hover table-bordered " >
-                                        <tr>
-                                            <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN </a></th>
-                                        </tr>    
-                                          
-                                        <tr>
-                                            <th> Build # </th>
-                                            <td>{{aw3showbuild}}</td>
-                                            <th> Passed </th>
-                                            <td> {{ awtest3pass }} </th>
-                                         </tr>
-                                         <tr>
-                                            <th> Date </th>
-                                            <td>{{aw3showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                             <th> Failed </th>
-                                             <td> {{awtest3fail }} </th>
-                                         </tr>
-                                         <tr>
-                                            <th> Status</th>
-                                            <td> {{aw3showstatus}}</td>
-                                             <th> Skipped </th>
-                                             <td> {{awtest3skip}} </td>
-                                        </tr>
-                                         <tr>
-                                             <th> Version </th>
-                                             <td> </td>
-                                             <th> Total </th>
-                                             <td> {{awtest3total}} </td>
-                                         </tr>   
-                                    </table>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <table class="table table-striped table-hover table-bordered " >
-                                            <tr>
-                                                <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/" target="_blank">YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a></th>
-                                            </tr>    
-                                              
-                                            <tr>
-                                                <th> Build # </th>
-                                                <td>{{aw4showbuild}}</td>
-                                                
-                                                <th> Passed </th>
-                                                <td> {{ awtest4pass }} </th>
-                                             </tr>
-                                             <tr>
-                                                <th> Date </th>
-                                                <td>{{aw4showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
-                                             <th> Failed </th>
-                                             <td> {{awtest4fail }} </th>
-                                             </tr>
-                                             <tr>
-                                                <th> Status</th>
-                                                <td> {{aw4showstatus}}</td>
-                                             <th> Skipped </th>
-                                             <td> {{awtest4skip}} </td>
-                                            </tr>
-                                            
-                                         <tr>
-                                             <th> Version </th>
-                                             <td> </td>
-                                             <th> Total </th>
-                                             <td> {{awtest4total}} </td>
-                                         </tr>      
-                                        </table>
+  <div class="col-sm-12">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title">TRUNK</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-sm-6">
+                <table class="table table-striped table-hover table-bordered">
+                  <tr>
+                    <th colspan="4" class="text-center">
+                      <a
+                        href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT/"
+                        target="_blank"
+                        >YAIC-AWS-DEV-BVT
+                      </a>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>Build #</th>
+                    <td>{{aw1showbuild}}</td>
+                    <th>Passed</th>
+                    <td>{{ awtest1pass }}</td>
+                  </tr>
+                  <tr>
+                    <th>Date</th>
+                    <td>{{aw1showtime | date: 'dd-MM-yyyy h:mm:ss a'}}</td>
+                    <th>Failed</th>
+                    <td>{{awtest1fail }}</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>{{aw1showstatus}}</td>
+                    <th>Skipped</th>
+                    <td>{{awtest1skip}}</td>
+                  </tr>
+                  <tr>
+                    <th>Version</th>
+                    <td></td>
+                    <th>Total</th>
+                    <td>{{awtest1total}}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-sm-6">
+                <table class="table table-striped table-hover table-bordered">
+                  <tr>
+                    <th colspan="2" class="text-center">
+                      <a
+                        href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-PARALLEL/"
+                        target="_blank"
+                        >YAIC-AWS-DEV-BVT-PARALLEL</a
+                      >
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>Build #</th>
+                    <td>{{aw2showbuild}}</td>
+                  </tr>
+                  <tr>
+                    <th>Date</th>
+                    <td>{{aw2showtime | date: 'dd-MM-yyyy h:mm:ss a'}}</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>{{aw2showstatus}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-sm-6">
+                <table class="table table-striped table-hover table-bordered">
+                  <tr>
+                    <th colspan="4" class="text-center">
+                      <a
+                        href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN/"
+                        target="_blank"
+                        >YAIC-AWS-DEV-BVT-SPLIT-RUN
+                      </a>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>Build #</th>
+                    <td>{{aw3showbuild}}</td>
+                    <th>Passed</th>
+                    <td>{{ awtest3pass }}</td>
+                  </tr>
+                  <tr>
+                    <th>Date</th>
+                    <td>{{aw3showtime | date: 'dd-MM-yyyy h:mm:ss a'}}</td>
+                    <th>Failed</th>
+                    <td>{{awtest3fail }}</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>{{aw3showstatus}}</td>
+                    <th>Skipped</th>
+                    <td>{{awtest3skip}}</td>
+                  </tr>
+                  <tr>
+                    <th>Version</th>
+                    <td></td>
+                    <th>Total</th>
+                    <td>{{awtest3total}}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-sm-6">
+                <table class="table table-striped table-hover table-bordered">
+                  <tr>
+                    <th colspan="4" class="text-center">
+                      <a
+                        href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL/"
+                        target="_blank"
+                        >YAIC-AWS-DEV-BVT-SPLIT-RUN_PARTIAL</a
+                      >
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>Build #</th>
+                    <td>{{aw4showbuild}}</td>
+                    <th>Passed</th>
+                    <td>{{ awtest4pass }}</td>
+                  </tr>
+                  <tr>
+                    <th>Date</th>
+                    <td>{{aw4showtime | date: 'dd-MM-yyyy h:mm:ss a'}}</td>
+                    <th>Failed</th>
+                    <td>{{awtest4fail }}</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>{{aw4showstatus}}</td>
+                    <th>Skipped</th>
+                    <td>{{awtest4skip}}</td>
+                  </tr>
+                  <tr>
+                    <th>Version</th>
+                    <td></td>
+                    <th>Total</th>
+                    <td>{{awtest4total}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-                                    </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                   
-                                </li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-    
 </div>
 
 <div id="INT" class="tabcontentv">
