@@ -238,7 +238,7 @@ body {
 /* Style the buttons that are used to open the tab content */
 .tabv button {
   display: block;
-  background-color: inherit;
+  background-color: #00CED1;
   color: black;
   padding: 22px 16px;
   width: 100%;
