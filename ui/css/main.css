@@ -243,7 +243,7 @@ body {
   padding: 22px 16px;
   width: 100%;
   border: none;
-  outline: none;
+  outline: groove;
   text-align: left;
   cursor: pointer;
   transition: 0.3s;
