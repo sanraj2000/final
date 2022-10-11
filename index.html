@@ -546,6 +546,92 @@
 
 <div id="DEV" class="tabcontentv">
     <h1> dev</h1>
+    <div class="row">
+    <div class="col-sm-6">
+        <div class="card  bg-light">
+            <div class="card-body">
+                <h5 class="card-title">TRUNK</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
+                            <tr>
+                                <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT/" target="_blank">YAIC-AWS-PREPROD-BVT</a></th>
+                            </tr>    
+                              
+                            <tr>
+                                <th> Build # </th>
+                                <td>{{aw5showbuild}}</td>
+                                <th> Passed </th>
+                                <td> {{ awtest5pass }} </td>
+                             </tr>
+                             <tr>
+                                <th> Date </th>
+                                <td>{{aw5showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                 <th> Failed </th>
+                                 <td> {{awtest5fail }} </td>
+                             </tr>
+                             <tr>
+                                <th> Status</th>
+                                <td> {{aw5showstatus}}</td>
+                                 <th> Skipped </th>
+                                 <td> {{awtest5skip}} </td>
+                            </tr>
+                             <tr>
+                                 <th> Version </th>
+                                 <td></td>
+                                 <th> Total </th>
+                                 <td> {{awtest5total}} </td>
+                             </tr>   
+                        </table>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card bg-light ">
+            <div class="card-body">
+                <h5 class="card-title">SPRO</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <table class="table table-striped table-hover table-bordered " style="margin-left: 5%;  width: 90%;" >
+                            <tr>
+                                <th colspan="4" class="text-center"><a href="https://vmapigwjenkins:8443/view/APIGW%20Cloud/job/YAIC-AWS-PREPROD-BVT-SPRO/" target="_blank">YAIC-AWS-PREPROD-BVT-SPRO</a></th>
+                            </tr>    
+                              
+                            <tr>
+                                <th> Build # </th>
+                                <td>{{aw9showbuild}}</td>
+                                <th> Passed </th>
+                                <td> {{ awtest9pass }} </td>
+                             </tr>
+                             <tr>
+                                <th> Date </th>
+                                <td>{{aw9showtime | date: 'dd-MM-yyyy  h:mm:ss a'}}</td>
+                                 <th> Failed </th>
+                                 <td> {{awtest9fail }} </td>
+                             </tr>
+                             <tr>
+                                <th> Status</th>
+                                <td> {{aw9showstatus}}</td>
+                                 <th> Skipped </th>
+                                 <td> {{awtest9skip}} </td>
+                            </tr>
+                             <tr>
+                                 <th> Version </th>
+                                 <td></td>
+                                 <th> Total </th>
+                                 <td> {{awtest9total}} </td>
+                             </tr>   
+                        </table>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>  
 </div>
 
 <div id="INT" class="tabcontentv">
