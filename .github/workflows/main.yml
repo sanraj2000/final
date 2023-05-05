@@ -27,7 +27,8 @@ jobs:
       - run: |
          date +'%A %d-%m-%y %X'
          date '+%A %d-%m-%y %X' >> ./output/time.txt
-         TZ='asia/kolkata' date > ./output/time1.txt
+         TZ='Asia/Kolkata' date > ./output/time1.txt
+         
 
     #  - name: GET all dev
      #   id: tms1
