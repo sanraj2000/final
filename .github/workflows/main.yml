@@ -25,8 +25,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - run: |
-         date '+%A %W %Y %X'
-         date '+%A %W %Y %X' >> ./output/time.txt
+         date +'%A %d-%m-%y %X'
+         date '+%A %d-%m-%y %X' >> ./output/time.txt
 
     #  - name: GET all dev
      #   id: tms1
