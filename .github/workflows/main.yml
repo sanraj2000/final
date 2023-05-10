@@ -30,7 +30,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - run: |
-
+         sleep 100
          date +'%A %d-%m-%y %X'
          date '+%A %d-%m-%y %X' >> ./output/time.txt
          TZ='Asia/Kolkata' date > ./output/time1.txt
