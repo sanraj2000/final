@@ -5,8 +5,9 @@ name: CI
 # Controls when the workflow will run
 on:
   
-  check_run:
-    types: [completed] 
+  workflow_run:
+   types:
+      - completed
   push:
     branches: [ "main" ] 
   
