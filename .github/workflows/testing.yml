@@ -116,5 +116,11 @@ jobs:
         run: | 
           result="(first==10)?second:third"
           ui=${{ inputs.BranchNameEngine == 'main'}}
-          uitag=(($ui==true?${{ inputs.BranchNameEngine}}:santhiya))
+          echo $ui
+          if ${{ inputs.BranchNameEngine == 'main'}}; then
+           uitag=${{ inputs.BranchNameEngine}}
+          else
+            uitag="santhiya"
+          fi
+          #uitag=(($ui==true?${{ inputs.BranchNameEngine}}:santhiya))
           echo $uitag
