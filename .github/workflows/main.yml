@@ -6,8 +6,8 @@ name: CI
 on:
   
   
-  push:
-    branches: [ "main" ] 
+#   push:
+#     branches: [ "main" ] 
   
 
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -16,6 +16,12 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+   inputs:
+    BranchNameAssetcatalog:
+        description: 'Asset catalog branch name (Ex: feature/WCO-1234-feature-implementation)'
+        default: 'main'
+        required: true
+        type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
