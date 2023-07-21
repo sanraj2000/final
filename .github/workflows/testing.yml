@@ -53,7 +53,7 @@ on:
 jobs:
   Build_docker_image_ui:
     if: ${{ inputs.BranchNameUI}} != 'main'
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
       # Checkout source code
       - name: Checkout source code
@@ -61,7 +61,7 @@ jobs:
 
   Build_docker_image_asset_catalog:
     if: ${{ inputs.BranchNameUI}} != 'main'
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
 
       # Checkout source code
@@ -70,7 +70,7 @@ jobs:
 
   Build_docker_image_ingress:
     if: ${{ inputs.BranchNameUI}} != 'main'
-    runs-on: [ self-hosted]
+    runs-on: ubuntu-latest
     steps:
        # Checkout source code
       - name: Checkout source code
@@ -78,14 +78,14 @@ jobs:
 
   Build_docker_image_engine:
     if: ${{ inputs.BranchNameUI}} != 'main'
-    runs-on: [ self-hosted, control-plane, k8s ]
+    runs-on: ubuntu-latest
     steps:
       # Checkout source code
       - name: Checkout source code
         run: Echo "HI"
 
   Tenant_upgrade:
-    runs-on: [ self-hosted, control-plane, k8s ]
+    runs-on: ubuntu-latest
     needs: [Build_docker_image_ui, Build_docker_image_asset_catalog, Build_docker_image_ingress, Build_docker_image_engine]
     steps:
       - name: Checking
