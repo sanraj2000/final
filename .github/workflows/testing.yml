@@ -111,3 +111,9 @@ jobs:
     steps:
       - name: Checking
         run: echo "Good to go for tenant deployment"
+        
+      - name: Validating the images
+        run: | 
+          result="(first==10)?second:third"
+          ui="( ${{ inputs.BranchNameEngine == 'main'}} )?${{ inputs.BranchNameEngine}}:${{ inputs.ImagetagEngine}}"
+          echo $ui
