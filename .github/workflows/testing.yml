@@ -115,5 +115,5 @@ jobs:
       - name: Validating the images
         run: | 
           result="(first==10)?second:third"
-          ui="(${{ inputs.BranchNameEngine == 'main'}})?(${{ inputs.BranchNameEngine}}):(${{ inputs.ImagetagEngine}})"
+          ui=((${{ inputs.BranchNameEngine == 'main'}}?${{ inputs.BranchNameEngine}}:${{ inputs.ImagetagEngine}}))
           echo $ui
