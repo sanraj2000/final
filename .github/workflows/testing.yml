@@ -66,7 +66,7 @@ jobs:
 
       # Checkout source code
       - name: Checkout source code
-        run: Echo "HI"
+        run: echo "HI"
 
   Build_docker_image_ingress:
     if: ${{ inputs.BranchNameUI}} != 'main'
@@ -74,7 +74,7 @@ jobs:
     steps:
        # Checkout source code
       - name: Checkout source code
-        run: Echo "HI"
+        run: echo "HI"
 
   Build_docker_image_engine:
     if: ${{ inputs.BranchNameUI}} != 'main'
@@ -82,7 +82,7 @@ jobs:
     steps:
       # Checkout source code
       - name: Checkout source code
-        run: Echo "HI"
+        run: echo "HI"
 
   Tenant_upgrade:
     runs-on: ubuntu-latest
