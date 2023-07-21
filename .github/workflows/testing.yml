@@ -1,0 +1,92 @@
+name: Deploy feature branch to CA3S dev
+
+
+on:
+  workflow_dispatch:
+    inputs:
+      BranchNameUI:
+        description: 'Ui branch name (Ex: feature/WCO-1234-feature-implementation)'
+        default: 'main'
+        required: true
+        type: string
+      ImagetagUI:
+        description: 'Tag for the new UI image'
+        default: 'internal'
+        required: true
+        type: string
+      BranchNameAssetcatalog:
+        description: 'Asset catalog branch name (Ex: feature/WCO-1234-feature-implementation)'
+        default: 'main'
+        required: true
+        type: string
+      ImagetagAssetcatalog:
+        description: 'Tag for the new asset catalog image'
+        default: 'internal'
+        required: true
+        type: string
+      BranchNameIngress:
+        description: 'Ingress branch name (Ex: feature/WCO-1234-feature-implementation)'
+        default: 'main'
+        required: true
+        type: string
+      ImagetagIngress:
+        description: 'Tag for the new ingress image'
+        default: 'internal'
+        required: true
+        type: string
+      BranchNameEngine:
+        description: 'Engine branch name (Ex: feature/WCO-1234-feature-implementation)'
+        default: 'main'
+        required: true
+        type: string
+      ImagetagEngine:
+        description: 'Tag for the new  engine image'
+        default: 'internal'
+        required: true
+        type: string
+      TenantName:
+        description: 'Tenant Name'
+        default: 'falconz'
+        required: true
+        type: string
+
+jobs:
+  Build_docker_image_ui:
+    if: ${{ inputs.BranchNameUI}} != 'main'
+    runs-on: [self-hosted]
+    steps:
+      # Checkout source code
+      - name: Checkout source code
+        run: Echo "HI"
+
+  Build_docker_image_asset_catalog:
+    if: ${{ inputs.BranchNameUI}} != 'main'
+    runs-on: [self-hosted]
+    steps:
+
+      # Checkout source code
+      - name: Checkout source code
+        run: Echo "HI"
+
+  Build_docker_image_ingress:
+    if: ${{ inputs.BranchNameUI}} != 'main'
+    runs-on: [ self-hosted]
+    steps:
+       # Checkout source code
+      - name: Checkout source code
+        run: Echo "HI"
+
+  Build_docker_image_engine:
+    if: ${{ inputs.BranchNameUI}} != 'main'
+    runs-on: [ self-hosted, control-plane, k8s ]
+    steps:
+      # Checkout source code
+      - name: Checkout source code
+        run: Echo "HI"
+
+  Tenant_upgrade:
+    runs-on: [ self-hosted, control-plane, k8s ]
+    needs: [Build_docker_image_ui, Build_docker_image_asset_catalog, Build_docker_image_ingress, Build_docker_image_engine]
+    steps:
+      - name: Checking
+        run: echo "Good to go for tenant deployment"
