@@ -115,11 +115,6 @@ jobs:
       - name: Validating the images
         run: | 
           result="(first==10)?second:third"
-          if[ ${{ inputs.BranchNameEngine == 'main'}} ] then
-          ui=${{ inputs.BranchNameEngine}}
-          else
-          ui=${{ inputs.ImagetagEngine}}
-          fi
-          echo $ui
-          #ui=((${{ inputs.BranchNameEngine == 'main'}}?${{ inputs.BranchNameEngine}}:${{ inputs.ImagetagEngine}}))
-          echo $ui
+          ui=${{ inputs.BranchNameEngine == 'main'}}
+          uitag=(($ui==true?${{ inputs.BranchNameEngine}}:santhiya))
+          echo $uitag
