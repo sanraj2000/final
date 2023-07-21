@@ -52,37 +52,58 @@ on:
 
 jobs:
   Build_docker_image_ui:
-    if: ${{ inputs.BranchNameUI != 'main'}}
+   
     runs-on: ubuntu-latest
     steps:
       # Checkout source code
       - name: Checkout source code
+        if: ${{ inputs.BranchNameUI != 'main'}}
         run: echo "HI"
+        
+      - name: Checkout source code
+        if: ${{ inputs.BranchNameUI == 'main'}}
+        run: echo "Hello world"
+
 
   Build_docker_image_asset_catalog:
-    if: ${{ inputs.BranchNameUI != 'main'}}
     runs-on: ubuntu-latest
     steps:
 
       # Checkout source code
       - name: Checkout source code
+        if: ${{ inputs.BranchNameAssetcatalog != 'main'}}
         run: echo "HI"
+        
+      - name: Checkout source code
+        if: ${{ inputs.BranchNameAssetcatalog == 'main'}}
+        run: echo "Hello world"
+
 
   Build_docker_image_ingress:
-    if: ${{ inputs.BranchNameUI != 'main'}}
     runs-on: ubuntu-latest
     steps:
        # Checkout source code
       - name: Checkout source code
+        if: ${{ inputs.BranchNameIngress != 'main'}}
         run: echo "HI"
+        
+      - name: Checkout source code
+        if: ${{ inputs.BranchNameIngress == 'main'}}
+        run: echo "Hello world"
+
 
   Build_docker_image_engine:
-    if: ${{ inputs.BranchNameUI != 'main'}}
     runs-on: ubuntu-latest
     steps:
       # Checkout source code
       - name: Checkout source code
+        if: ${{ inputs.BranchNameEngine != 'main'}}
         run: echo "HI"
+        
+      - name: Checkout source code
+        if: ${{ inputs.BranchNameEngine == 'main'}}
+        run: echo "Hello world"
+
 
   Tenant_upgrade:
     runs-on: ubuntu-latest
