@@ -122,5 +122,6 @@ jobs:
           else
             uitag="santhiya"
           fi
-          #uitag=(($ui==true?${{ inputs.BranchNameEngine}}:santhiya))
+          echo $uitag
+          uitag=((${{ inputs.BranchNameEngine == 'main'}}?${{ inputs.BranchNameEngine}}:santhiya))
           echo $uitag
