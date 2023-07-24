@@ -55,7 +55,7 @@ jobs:
   
    
     runs-on: ubuntu-latest
-    if: ${{ inputs.BranchNameUI != 'main'}}
+    if: ${{ inputs.BranchNameUI == 'main'}}
     steps:
       # Checkout source code
       - name: Checkout source code
@@ -63,7 +63,6 @@ jobs:
         run: echo "HI"
         
       - name: Checkout source code
-        if: ${{ inputs.BranchNameUI == 'main'}}
         run: echo "Hello world"
 
 
